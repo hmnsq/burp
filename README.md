@@ -28,3 +28,5 @@ and reports what to do next. The language tables come from the canonical Hindawi
 
 © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. MIT licence (the original Hindawi tables keep theirs: NOTICE).
 BURP™ and Hindawi™ are his trademarks.
+
+DOI (2026.10.0): [10.5281/zenodo.23572497](https://doi.org/10.5281/zenodo.23572497)
