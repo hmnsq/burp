@@ -1,0 +1,30 @@
+%{
+/* tulu h2asm.uhin: generated from the tulu lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+ಅಧ್ಯವಸ್ಯತಿ                  {printf("ASSUME");}
+ಅನ್ತರ್ಭಾವ                   {printf("INCLUDE");}
+ಪೂರ್ಣಾಙ್ಕ                   {printf("INT");}
+ಸಾರ್ವಜನಿಕ                   {printf("PUBLIC");}
+ನಿರ್ದೇಶಕ                    {printf("PTR");}
+ವೈಶ್ವಿಕ                     {printf("global");}
+ಅನ್ಯಥಾ                      {printf("ELSE");}
+ಆಹ್ವಾನ                      {printf("CALL");}
+ಪ್ರಕಾರ                      {printf("TYPE");}
+ಅನ್ತಃ                       {printf("IN");}
+ಬಾಹ್ಯ                       {printf("EXTERN");}
+ಯಾವತ್                       {printf("WHILE");}
+ಅನ್ತ                        {printf("END");}
+ಏತತ್                        {printf("THIS");}
+ತಾಲಕ                        {printf("LOCK");}
+ವಿಧಿ                        {printf("PROC");}
+ಯದಿ                         {printf("IF");}
+ವಾ                          {printf("OR");}
+ಚ                           {printf("AND");}
+ನ                           {printf("NOT");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

@@ -1,0 +1,31 @@
+%{
+/* dzongkha c2h.uhin: generated from the dzongkha lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+protected                   {printf("rak_sita");}
+register                    {printf("pa_njikaa");}
+volatile                    {printf("ca_ncala");}
+double                      {printf("dviguu_na");}
+inline                      {printf("anta_hstha");}
+return                      {printf("ལོག");}
+signal                      {printf("sa_nkeeta");}
+sizeof                      {printf("parimaa_na");}
+struct                      {printf("sa_nracanaa");}
+\#else                      {printf("#དེ་མིན");}
+break                       {printf("bha_nga");}
+union                       {printf("sa_ngha");}
+while                       {printf("སྐབས");}
+case                        {printf("pak_sa");}
+char                        {printf("var_na");}
+else                        {printf("དེ་མིན");}
+enum                        {printf("ga_nanaa");}
+\#if                        {printf("#གལ་སྲིད");}
+for                         {printf("དོན་ལུ");}
+int                         {printf("ཧྲིལ");}
+if                          {printf("གལ་སྲིད");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

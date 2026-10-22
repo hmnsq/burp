@@ -1,0 +1,36 @@
+%{
+/* batak h2java.uhin: generated from the batak lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+puur_naa_nka                {printf("int");}
+ni_spaadita                 {printf("implements");}
+sa_nracanaa                 {printf("struct");}
+anta_hstha                  {printf("inline");}
+parimaa_na                  {printf("sizeof");}
+dviguu_na                   {printf("double");}
+gr_haa_na                   {printf("catch");}
+pa_njikaa                   {printf("register");}
+sa_nkeeta                   {printf("signal");}
+antata_h                    {printf("finally");}
+ca_ncala                    {printf("volatile");}
+ga_nanaa                    {printf("enum");}
+rak_sita                    {printf("protected");}
+su_supti                    {printf("sleep");}
+vistr_ta                    {printf("extends");}
+bha_nga                     {printf("break");}
+sa_ngha                     {printf("union");}
+\#ᯀᯮᯝᯂᯪ                     {printf("#else");}
+k_sipa                      {printf("throw");}
+pak_sa                      {printf("case");}
+var_na                      {printf("char");}
+ᯀᯮᯝᯂᯪ                       {printf("else");}
+\#ᯀᯮᯝ                       {printf("#if");}
+ᯀᯬᯝ                         {printf("while");}
+ᯀᯮᯝ                         {printf("if");}
+ᯀᯮᯞ                         {printf("return");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

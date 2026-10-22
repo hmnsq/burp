@@ -1,0 +1,22 @@
+%{
+/* buginese b2h.uhin: generated from the buginese lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("ᨀᨘᨒ");}
+return                      {printf("ᨀᨘᨒ");}
+WHILE                       {printf("ᨀᨛ");}
+while                       {printf("ᨀᨛ");}
+ELSE                        {printf("ᨀᨘᨁ");}
+AND                         {printf("ca");}
+INT                         {printf("puur_naa_nka");}
+NOT                         {printf("na");}
+and                         {printf("ca");}
+not                         {printf("na");}
+IF                          {printf("ᨀᨘ");}
+if                          {printf("ᨀᨘ");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

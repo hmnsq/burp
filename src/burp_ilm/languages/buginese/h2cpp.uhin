@@ -1,0 +1,34 @@
+%{
+/* buginese h2cpp.uhin: generated from the buginese lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+puur_naa_nka                {printf("int");}
+sa_nracanaa                 {printf("struct");}
+anta_hstha                  {printf("inline");}
+parimaa_na                  {printf("sizeof");}
+dviguu_na                   {printf("double");}
+gr_haa_na                   {printf("catch");}
+pa_njikaa                   {printf("register");}
+pra_naala                   {printf("pipe");}
+sa_nkeeta                   {printf("signal");}
+ca_ncala                    {printf("volatile");}
+ga_nanaa                    {printf("enum");}
+rak_sita                    {printf("protected");}
+su_supti                    {printf("sleep");}
+bha_nga                     {printf("break");}
+sa_ngha                     {printf("union");}
+k_sipa                      {printf("throw");}
+pak_sa                      {printf("case");}
+var_na                      {printf("char");}
+\#ᨀᨘᨁ                       {printf("#else");}
+\#ᨀᨘ                        {printf("#if");}
+ᨀᨘᨁ                         {printf("else");}
+ᨀᨘᨒ                         {printf("return");}
+ᨀᨘ                          {printf("if");}
+ᨀᨛ                          {printf("while");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

@@ -1,0 +1,29 @@
+%{
+/* arabic h2asm.uhin: generated from the arabic lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+إجراء                       {printf("PROC");}
+افترض                       {printf("ASSUME");}
+بينما                       {printf("WHILE");}
+خارجي                       {printf("EXTERN");}
+انته                        {printf("END");}
+صحيح                        {printf("INT");}
+مؤشر                        {printf("PTR");}
+نادي                        {printf("CALL");}
+وإلا                        {printf("ELSE");}
+إذا                         {printf("IF");}
+ضمن                         {printf("INCLUDE");}
+عام                         {printf("PUBLIC");}
+قفل                         {printf("LOCK");}
+ليس                         {printf("NOT");}
+نوع                         {printf("TYPE");}
+هذا                         {printf("THIS");}
+أو                          {printf("OR");}
+في                          {printf("IN");}
+و                           {printf("AND");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

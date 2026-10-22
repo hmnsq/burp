@@ -1,0 +1,24 @@
+%{
+/* thai b2h.uhin: generated from the thai lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("คืน");}
+return                      {printf("คืน");}
+WHILE                       {printf("ขณะ");}
+while                       {printf("ขณะ");}
+ELSE                        {printf("มิฉะนั้น");}
+AND                         {printf("ca");}
+FOR                         {printf("สำหรับ");}
+INT                         {printf("จำนวนเต็ม");}
+NOT                         {printf("na");}
+and                         {printf("ca");}
+for                         {printf("สำหรับ");}
+not                         {printf("na");}
+IF                          {printf("ถ้า");}
+if                          {printf("ถ้า");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

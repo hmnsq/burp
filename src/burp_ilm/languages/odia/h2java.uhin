@@ -1,0 +1,74 @@
+%{
+/* odia h2java.uhin: generated from the odia lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+ପୂର୍ବନିର୍ଦ୍ଧାରିତ            {printf("default");}
+ପ୍ରକାରବ୍ୟାଖ୍ୟା              {printf("typedef");}
+ପୂର୍ଣ୍ଣସଂଖ୍ୟା               {printf("int");}
+କାର୍ଯ୍ୟକାରୀ                 {printf("implements");}
+\#ଅନ୍ତର୍ଭାଵ                 {printf("#include");}
+ଧାଡ଼ିଭିତରେ                  {printf("inline");}
+ସର୍ବସାଧାରଣ                  {printf("public");}
+ପ୍ରତିଜ୍ଞା                   {printf("assert");}
+ବ୍ୟକ୍ତିଗତ                   {printf("private");}
+\#ନଚେତଯଦି                   {printf("#elif");}
+ଅନ୍ତରମୁଖ                    {printf("interface");}
+ପଞ୍ଜିକରଣ                    {printf("register");}
+ଯେତେବେଳେ                    {printf("while");}
+ସୁରକ୍ଷିତ                    {printf("protected");}
+ସୁଷୁପ୍ତି                    {printf("sleep");}
+\#ଅନ୍ୟଥା                    {printf("#else");}
+ଦ୍ୱିଗୁଣ                     {printf("double");}
+ପ୍ୟାକେଜ                     {printf("package");}
+ଫେରନ୍ତୁ                     {printf("return");}
+ବିସ୍ତାର                     {printf("extends");}
+ଅନ୍ୟଥା                      {printf("else");}
+ଅମୂର୍ତ                      {printf("abstract");}
+ଅସ୍ଥିର                      {printf("volatile");}
+ଆମଦାନୀ                      {printf("import");}
+ଚେଷ୍ଟା                      {printf("try");}
+ମିଥ୍ୟା                      {printf("false");}
+ଶ୍ରେଣୀ                      {printf("class");}
+ସଂରଚନା                      {printf("struct");}
+ସଙ୍କେତ                      {printf("signal");}
+ସ୍ଥିତି                      {printf("case");}
+ଅକ୍ଷର                       {printf("char");}
+ଆଭାସୀ                       {printf("virtual");}
+ଦଶମିକ                       {printf("float");}
+ଫିଙ୍ଗ                       {printf("throw");}
+ବସ୍ତୁ                       {printf("Object");}
+ବାକ୍ୟ                       {printf("String");}
+ବାହ୍ୟ                       {printf("extern");}
+ଭାଙ୍ଗ                       {printf("break");}
+ମୁକ୍ତ                       {printf("free");}
+ମୁଖ୍ୟ                       {printf("main");}
+ଶୂନ୍ୟ                       {printf("void");}
+ଶେଷରେ                       {printf("finally");}
+ସ୍ଥିର                       {printf("static");}
+\#ଯଦି                       {printf("#if");}
+ଆକାର                        {printf("sizeof");}
+ଉଠାଅ                        {printf("raise");}
+ଖାଲି                        {printf("NULL");}
+ଗଣନା                        {printf("enum");}
+ଜାରି                        {printf("continue");}
+ନୂତନ                        {printf("new");}
+ପାଇଁ                        {printf("for");}
+ସତ୍ୟ                        {printf("true");}
+ସୂତା                        {printf("Thread");}
+ଅଚଳ                         {printf("const");}
+ଏହି                         {printf("this");}
+ପରମ                         {printf("super");}
+ବାଛ                         {printf("switch");}
+ଯଦି                         {printf("if");}
+ଯାଅ                         {printf("goto");}
+ଲିଖ                         {printf("write");}
+ସଂଘ                         {printf("union");}
+କର                          {printf("do");}
+ଧର                          {printf("catch");}
+ପଠ                          {printf("read");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

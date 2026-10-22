@@ -1,0 +1,41 @@
+%{
+/* telugu h2b.uhin: generated from the telugu lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+అంతవరకు_ముగింపు             {printf("wend");}
+తదుపరి_చక్రం                {printf("next");}
+ఉప_వెళ్ళు                   {printf("gosub");}
+కాలయన్త్ర                   {printf("TIMER");}
+పూర్ణాంకం                   {printf("INT");}
+ముద్రించు                   {printf("print");}
+స్థిరరాశి                   {printf("CONST");}
+అడుగుతో                     {printf("step");}
+అప్పుడు                     {printf("then");}
+పరిమాణం                     {printf("dim");}
+ముగింపు                     {printf("END");}
+లేకపోతే                     {printf("ELSE");}
+వ్యాఖ్య                     {printf("rem");}
+సహభాజిత                     {printf("SHARED");}
+తిరిగి                      {printf("RETURN");}
+తీసుకో                      {printf("input");}
+పదబంధం                      {printf("STRING");}
+పిలువు                      {printf("CALL");}
+వెళ్ళు                      {printf("GOTO");}
+అనుకో                       {printf("LET");}
+అయితే                       {printf("WHILE");}
+ఒకవేళ                       {printf("IF");}
+కొరకు                       {printf("FOR");}
+మరియు                       {printf("AND");}
+స్థిర                       {printf("STATIC");}
+కాదు                        {printf("NOT");}
+చేయి                        {printf("DO");}
+లేదా                        {printf("OR");}
+వరకు                        {printf("to");}
+శేషం                        {printf("mod");}
+ఇవ                          {printf("AS");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

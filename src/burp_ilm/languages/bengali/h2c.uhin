@@ -1,0 +1,54 @@
+%{
+/* bengali h2c.uhin: generated from the bengali lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+পূর্বনির্ধারিত              {printf("default");}
+পূর্ণসংখ্যা                 {printf("int");}
+\#অন্তর্ভাব                 {printf("#include");}
+\#নতুবা_যদি                 {printf("#elif");}
+প্রকারলেখ                   {printf("typedef");}
+প্রতিজ্ঞা                   {printf("assert");}
+ব্যক্তিগত                   {printf("private");}
+অন্তঃরেখ                    {printf("inline");}
+নির্বাচন                    {printf("switch");}
+সর্বজনীন                    {printf("public");}
+সুরক্ষিত                    {printf("protected");}
+\#অন্যথা                    {printf("#else");}
+ক্ষেত্র                     {printf("case");}
+দ্বিগুণ                     {printf("double");}
+বাহ্যিক                     {printf("extern");}
+অন্যথা                      {printf("else");}
+অস্থির                      {printf("volatile");}
+কাঠামো                      {printf("struct");}
+ধ্রুবক                      {printf("const");}
+নিবন্ধ                      {printf("register");}
+প্রধান                      {printf("main");}
+অক্ষর                       {printf("char");}
+আভাসী                       {printf("virtual");}
+দশমিক                       {printf("float");}
+ফাঁকা                       {printf("NULL");}
+বিরতি                       {printf("break");}
+মুক্ত                       {printf("free");}
+শূন্য                       {printf("void");}
+সংকেত                       {printf("signal");}
+স্থির                       {printf("static");}
+\#যদি                       {printf("#if");}
+আকার                        {printf("sizeof");}
+গণনা                        {printf("enum");}
+চালু                        {printf("continue");}
+জন্য                        {printf("for");}
+তোলো                        {printf("raise");}
+ফেরত                        {printf("return");}
+করো                         {printf("do");}
+যখন                         {printf("while");}
+যদি                         {printf("if");}
+যাও                         {printf("goto");}
+লিখ                         {printf("write");}
+সংঘ                         {printf("union");}
+পঠ                          {printf("read");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

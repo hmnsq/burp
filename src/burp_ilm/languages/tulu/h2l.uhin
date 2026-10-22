@@ -1,0 +1,54 @@
+%{
+/* tulu h2l.uhin: generated from the tulu lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+ಪ್ರಕಾರನಿರ್ದೇಶ               {printf("typedef");}
+\#ಅನ್ತರ್ಭಾವ                 {printf("#include");}
+\#ನೋಚೇದ್ಯದಿ                 {printf("#elif");}
+ಪೂರ್ಣಾಙ್ಕ                   {printf("int");}
+ಪ್ರತಿಜ್ಞಾ                   {printf("assert");}
+ಪ್ರತ್ಯಾಗಮ                   {printf("return");}
+ಸಾರ್ವಜನಿಕ                   {printf("public");}
+ಅನ್ತಃಸ್ಥ                    {printf("inline");}
+\#ಅನ್ಯಥಾ                    {printf("#else");}
+ಅನುವರ್ತ                     {printf("continue");}
+ಉತ್ಥಾಪಯ                     {printf("raise");}
+ದ್ವಿಗುಣ                     {printf("double");}
+ಪಞ್ಜಿಕಾ                     {printf("register");}
+ಅನ್ಯಥಾ                      {printf("else");}
+ಪರಿಮಾಣ                      {printf("sizeof");}
+ರಕ್ಷಿತ                      {printf("protected");}
+ವಿಕಲ್ಪ                      {printf("switch");}
+ಸಂರಚನಾ                      {printf("struct");}
+ಸಙ್ಕೇತ                      {printf("signal");}
+ಸ್ವಭಾವ                      {printf("default");}
+ಗುಪ್ತ                       {printf("private");}
+ಚಞ್ಚಲ                       {printf("volatile");}
+ಧ್ರುವ                       {printf("const");}
+ಪ್ರತಿ                       {printf("for");}
+ಬಾಹ್ಯ                       {printf("extern");}
+ಭಿನ್ನ                       {printf("float");}
+ಮುಕ್ತ                       {printf("free");}
+ಮುಖ್ಯ                       {printf("main");}
+ಯಾವತ್                       {printf("while");}
+ರಿಕ್ತ                       {printf("NULL");}
+ಶೂನ್ಯ                       {printf("void");}
+ಸ್ಥಿರ                       {printf("static");}
+\#ಯದಿ                       {printf("#if");}
+ಆಭಾಸ                        {printf("virtual");}
+ಕುರು                        {printf("do");}
+ಗಚ್ಛ                        {printf("goto");}
+ಗಣನಾ                        {printf("enum");}
+ಪಕ್ಷ                        {printf("case");}
+ಭಙ್ಗ                        {printf("break");}
+ವರ್ಣ                        {printf("char");}
+ಸಙ್ಘ                        {printf("union");}
+ಯದಿ                         {printf("if");}
+ಲಿಖ                         {printf("write");}
+ಪಠ                          {printf("read");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

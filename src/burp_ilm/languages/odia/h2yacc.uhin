@@ -1,0 +1,55 @@
+%{
+/* odia h2yacc.uhin: generated from the odia lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+ପୂର୍ବନିର୍ଦ୍ଧାରିତ            {printf("default");}
+ପ୍ରକାରବ୍ୟାଖ୍ୟା              {printf("typedef");}
+ପୂର୍ଣ୍ଣସଂଖ୍ୟା               {printf("int");}
+\#ଅନ୍ତର୍ଭାଵ                 {printf("#include");}
+ଧାଡ଼ିଭିତରେ                  {printf("inline");}
+ସର୍ବସାଧାରଣ                  {printf("public");}
+ପ୍ରତିଜ୍ଞା                   {printf("assert");}
+ବ୍ୟକ୍ତିଗତ                   {printf("private");}
+\#ନଚେତଯଦି                   {printf("#elif");}
+ପଞ୍ଜିକରଣ                    {printf("register");}
+ଯେତେବେଳେ                    {printf("while");}
+ସୁରକ୍ଷିତ                    {printf("protected");}
+\#ଅନ୍ୟଥା                    {printf("#else");}
+ଦ୍ୱିଗୁଣ                     {printf("double");}
+ଫେରନ୍ତୁ                     {printf("return");}
+ଅନ୍ୟଥା                      {printf("else");}
+ଅସ୍ଥିର                      {printf("volatile");}
+ପ୍ରକାର                      {printf("type");}
+ସଂରଚନା                      {printf("struct");}
+ସଙ୍କେତ                      {printf("signal");}
+ସ୍ଥିତି                      {printf("case");}
+ଅକ୍ଷର                       {printf("char");}
+ଆଭାସୀ                       {printf("virtual");}
+ଦଶମିକ                       {printf("float");}
+ବାହ୍ୟ                       {printf("extern");}
+ଭାଙ୍ଗ                       {printf("break");}
+ମୁକ୍ତ                       {printf("free");}
+ମୁଖ୍ୟ                       {printf("main");}
+ଶୂନ୍ୟ                       {printf("void");}
+ସ୍ଥିର                       {printf("static");}
+\#ଯଦି                       {printf("#if");}
+ଆକାର                        {printf("sizeof");}
+ଉଠାଅ                        {printf("raise");}
+ଖାଲି                        {printf("NULL");}
+ଗଣନା                        {printf("enum");}
+ଜାରି                        {printf("continue");}
+ପାଇଁ                        {printf("for");}
+ଅଚଳ                         {printf("const");}
+ବାଛ                         {printf("switch");}
+ଯଦି                         {printf("if");}
+ଯାଅ                         {printf("goto");}
+ଲିଖ                         {printf("write");}
+ସଂଘ                         {printf("union");}
+କର                          {printf("do");}
+ପଠ                          {printf("read");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

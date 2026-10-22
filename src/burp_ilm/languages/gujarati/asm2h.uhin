@@ -1,0 +1,31 @@
+%{
+/* gujarati asm2h.uhin: generated from the gujarati lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+INCLUDE                     {printf("અન્તર્ભાવ");}
+ASSUME                      {printf("અધ્યવસ્યતિ");}
+EXTERN                      {printf("બાહ્ય");}
+PUBLIC                      {printf("જાહેર");}
+global                      {printf("વૈશ્વિક");}
+WHILE                       {printf("જ્યારે");}
+CALL                        {printf("બોલાવો");}
+ELSE                        {printf("નહીંતર");}
+LOCK                        {printf("તાળું");}
+PROC                        {printf("પ્રક્રિયા");}
+THIS                        {printf("આ");}
+TYPE                        {printf("પ્રકાર");}
+call                        {printf("બોલાવો");}
+AND                         {printf("અને");}
+END                         {printf("અંત");}
+INT                         {printf("પૂર્ણાંક");}
+NOT                         {printf("નહીં");}
+PTR                         {printf("નિર્દેશક");}
+IF                          {printf("જો");}
+IN                          {printf("માં");}
+OR                          {printf("અથવા");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

@@ -1,0 +1,30 @@
+%{
+/* hebrew h2b.uhin: generated from the hebrew lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+כלעוד                       {printf("WHILE");}
+مشترك                       {printf("SHARED");}
+אחרת                        {printf("ELSE");}
+החזר                        {printf("RETURN");}
+עבור                        {printf("FOR");}
+اذهب                        {printf("GOTO");}
+ثابت                        {printf("CONST");}
+ساكن                        {printf("STATIC");}
+صحيح                        {printf("INT");}
+ليكن                        {printf("LET");}
+مؤقت                        {printf("TIMER");}
+نادي                        {printf("CALL");}
+וגם                         {printf("AND");}
+סוף                         {printf("END");}
+עשה                         {printf("DO");}
+או                          {printf("OR");}
+אם                          {printf("IF");}
+לא                          {printf("NOT");}
+كـ                          {printf("AS");}
+نص                          {printf("STRING");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

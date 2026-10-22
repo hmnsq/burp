@@ -1,0 +1,14 @@
+%{
+/* ukrainian asm2h.uhin: generated from the ukrainian lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+WHILE                       {printf("поки");}
+ELSE                        {printf("інакше");}
+INT                         {printf("ціле");}
+IF                          {printf("якщо");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

@@ -1,0 +1,14 @@
+%{
+/*
+Copyright (C) 2026 Abhishek Choudhary
+Hindawi Hindi — Java to Hindawi
+*/
+%}
+
+%%
+
+
+.                           {printf("%s", yytext);}
+\n                          {printf("\n");}
+
+%%

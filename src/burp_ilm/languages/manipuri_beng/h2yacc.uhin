@@ -1,0 +1,55 @@
+%{
+/* manipuri_beng h2yacc.uhin: generated from the manipuri_beng lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+প্রকারনির্দেশ               {printf("typedef");}
+\#অন্তর্ভাব                 {printf("#include");}
+\#নোচেদ্যদি                 {printf("#elif");}
+পূর্ণাঙ্ক                   {printf("int");}
+প্রতিজ্ঞা                   {printf("assert");}
+প্রত্যাগম                   {printf("return");}
+সার্বজনিক                   {printf("public");}
+অন্তঃস্থ                    {printf("inline");}
+\#অন্যথা                    {printf("#else");}
+অনুবর্ত                     {printf("continue");}
+উত্থাপয                     {printf("raise");}
+দ্বিগুণ                     {printf("double");}
+পঞ্জিকা                     {printf("register");}
+মরুওইবা                     {printf("main");}
+অন্যথা                      {printf("else");}
+পরিমাণ                      {printf("sizeof");}
+প্রকার                      {printf("type");}
+বিকল্প                      {printf("switch");}
+রক্ষিত                      {printf("protected");}
+সংরচনা                      {printf("struct");}
+সঙ্কেত                      {printf("signal");}
+স্বভাব                      {printf("default");}
+গুপ্ত                       {printf("private");}
+চঞ্চল                       {printf("volatile");}
+ধ্রুব                       {printf("const");}
+প্রতি                       {printf("for");}
+বাহ্য                       {printf("extern");}
+ভিন্ন                       {printf("float");}
+মুক্ত                       {printf("free");}
+যাবত্                       {printf("while");}
+রিক্ত                       {printf("NULL");}
+শূন্য                       {printf("void");}
+স্থির                       {printf("static");}
+\#যদি                       {printf("#if");}
+আভাস                        {printf("virtual");}
+কুরু                        {printf("do");}
+গচ্ছ                        {printf("goto");}
+গণনা                        {printf("enum");}
+পক্ষ                        {printf("case");}
+বর্ণ                        {printf("char");}
+ভঙ্গ                        {printf("break");}
+সঙ্ঘ                        {printf("union");}
+যদি                         {printf("if");}
+লিখ                         {printf("write");}
+পঠ                          {printf("read");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

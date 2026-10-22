@@ -1,0 +1,31 @@
+%{
+/* khmer h2c.uhin: generated from the khmer lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+\#បើមិនដូច្នេះ              {printf("#else");}
+បើមិនដូច្នេះ                {printf("else");}
+sa_nracanaa                 {printf("struct");}
+anta_hstha                  {printf("inline");}
+parimaa_na                  {printf("sizeof");}
+\#ប្រសិនបើ                  {printf("#if");}
+dviguu_na                   {printf("double");}
+pa_njikaa                   {printf("register");}
+sa_nkeeta                   {printf("signal");}
+ca_ncala                    {printf("volatile");}
+ga_nanaa                    {printf("enum");}
+rak_sita                    {printf("protected");}
+ចំនួនគត់                    {printf("int");}
+ប្រសិនបើ                    {printf("if");}
+bha_nga                     {printf("break");}
+sa_ngha                     {printf("union");}
+សម្រាប់                     {printf("for");}
+pak_sa                      {printf("case");}
+var_na                      {printf("char");}
+ខណៈពេល                      {printf("while");}
+ត្រឡប់                      {printf("return");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

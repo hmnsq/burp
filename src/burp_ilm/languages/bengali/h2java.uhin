@@ -1,0 +1,74 @@
+%{
+/* bengali h2java.uhin: generated from the bengali lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+পূর্বনির্ধারিত              {printf("default");}
+পূর্ণসংখ্যা                 {printf("int");}
+বাস্তবায়িত                 {printf("implements");}
+সম্প্রসারিত                 {printf("extends");}
+\#অন্তর্ভাব                 {printf("#include");}
+\#নতুবা_যদি                 {printf("#elif");}
+প্রকারলেখ                   {printf("typedef");}
+প্রতিজ্ঞা                   {printf("assert");}
+ব্যক্তিগত                   {printf("private");}
+সংযোগস্থল                   {printf("interface");}
+অন্তঃরেখ                    {printf("inline");}
+নির্বাচন                    {printf("switch");}
+সর্বজনীন                    {printf("public");}
+সুরক্ষিত                    {printf("protected");}
+সুষুপ্তি                    {printf("sleep");}
+\#অন্যথা                    {printf("#else");}
+ক্ষেত্র                     {printf("case");}
+দ্বিগুণ                     {printf("double");}
+বাহ্যিক                     {printf("extern");}
+বিমূর্ত                     {printf("abstract");}
+অন্যথা                      {printf("else");}
+অবশেষে                      {printf("finally");}
+অস্থির                      {printf("volatile");}
+আমদানি                      {printf("import");}
+কাঠামো                      {printf("struct");}
+চেষ্টা                      {printf("try");}
+ধ্রুবক                      {printf("const");}
+নিবন্ধ                      {printf("register");}
+প্রধান                      {printf("main");}
+মিথ্যা                      {printf("false");}
+শ্রেণী                      {printf("class");}
+অক্ষর                       {printf("char");}
+আভাসী                       {printf("virtual");}
+ছোড়ো                       {printf("throw");}
+দশমিক                       {printf("float");}
+ফাঁকা                       {printf("NULL");}
+বস্তু                       {printf("Object");}
+বাক্য                       {printf("String");}
+বিরতি                       {printf("break");}
+মুক্ত                       {printf("free");}
+মোড়ক                       {printf("package");}
+শূন্য                       {printf("void");}
+সংকেত                       {printf("signal");}
+স্থির                       {printf("static");}
+\#যদি                       {printf("#if");}
+আকার                        {printf("sizeof");}
+গণনা                        {printf("enum");}
+চালু                        {printf("continue");}
+জন্য                        {printf("for");}
+তোলো                        {printf("raise");}
+নতুন                        {printf("new");}
+ফেরত                        {printf("return");}
+সত্য                        {printf("true");}
+সুতা                        {printf("Thread");}
+করো                         {printf("do");}
+ধরো                         {printf("catch");}
+পরম                         {printf("super");}
+যখন                         {printf("while");}
+যদি                         {printf("if");}
+যাও                         {printf("goto");}
+লিখ                         {printf("write");}
+সংঘ                         {printf("union");}
+এই                          {printf("this");}
+পঠ                          {printf("read");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

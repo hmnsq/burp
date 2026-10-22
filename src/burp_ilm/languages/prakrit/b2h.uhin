@@ -1,0 +1,40 @@
+%{
+/* prakrit b2h.uhin: generated from the prakrit lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("प्रत्यागम");}
+SHARED                      {printf("सहभाजित");}
+STATIC                      {printf("स्थिर");}
+STRING                      {printf("पदावली");}
+return                      {printf("प्रत्यागम");}
+CONST                       {printf("ध्रुव");}
+TIMER                       {printf("कालयन्त्र");}
+WHILE                       {printf("जाव");}
+while                       {printf("जाव");}
+CALL                        {printf("आह्वान");}
+ELSE                        {printf("अण्णहा");}
+GOTO                        {printf("गच्छ");}
+goto                        {printf("गच्छ");}
+AND                         {printf("य");}
+END                         {printf("अन्त");}
+FOR                         {printf("प्रति");}
+INT                         {printf("पूर्णाङ्क");}
+LET                         {printf("अस्तु");}
+NOT                         {printf("ण");}
+and                         {printf("य");}
+end                         {printf("अन्त");}
+for                         {printf("प्रति");}
+let                         {printf("अस्तु");}
+not                         {printf("ण");}
+AS                          {printf("इव");}
+DO                          {printf("करेहि");}
+IF                          {printf("जइ");}
+OR                          {printf("वा");}
+if                          {printf("जइ");}
+or                          {printf("वा");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

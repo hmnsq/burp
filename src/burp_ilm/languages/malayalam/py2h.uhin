@@ -1,0 +1,69 @@
+%{
+/* malayalam py2h.uhin: generated from the malayalam lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+implements                  {printf("നടപ്പാക്കുക");}
+interface                   {printf("സമ്പർക്കമുഖം");}
+protected                   {printf("സംരക്ഷിത");}
+abstract                    {printf("അമൂർത്ത");}
+continue                    {printf("തുടരുക");}
+volatile                    {printf("അസ്ഥിര");}
+default                     {printf("സ്ഥിരസ്ഥിതി");}
+extends                     {printf("വിപുലീകരിക്കുക");}
+finally                     {printf("അവസാനമായി");}
+package                     {printf("പൊതി");}
+private                     {printf("സ്വകാര്യ");}
+Object                      {printf("വസ്തു");}
+String                      {printf("വാക്യം");}
+Thread                      {printf("നൂൽ");}
+assert                      {printf("പ്രതിജ്ഞാ");}
+double                      {printf("ഇരട്ട");}
+except                      {printf("അപവാദം");}
+global                      {printf("വൈശ്വിക");}
+import                      {printf("ഇറക്കുമതി");}
+lambda                      {printf("അജ്ഞാത");}
+public                      {printf("പൊതു");}
+return                      {printf("തിരികെ");}
+static                      {printf("സ്ഥിതം");}
+switch                      {printf("തിരഞ്ഞെടുപ്പ്");}
+False                       {printf("അസത്യം");}
+break                       {printf("നിർത്തുക");}
+catch                       {printf("പിടിക്കുക");}
+class                       {printf("വർഗ്ഗം");}
+const                       {printf("സ്ഥിരം");}
+float                       {printf("ദശാംശം");}
+raise                       {printf("ഉയർത്തുക");}
+sleep                       {printf("സുഷുപ്തി");}
+super                       {printf("പരം");}
+throw                       {printf("എറിയുക");}
+while                       {printf("ആകുമ്പോൾ");}
+write                       {printf("ലിഖ");}
+yield                       {printf("നൽകുക");}
+True                        {printf("സത്യം");}
+case                        {printf("അവസ്ഥ");}
+char                        {printf("അക്ഷരം");}
+elif                        {printf("അല്ലെങ്കിലെങ്കിൽ");}
+else                        {printf("അല്ലെങ്കിൽ");}
+from                        {printf("തഃ");}
+goto                        {printf("പോകുക");}
+main                        {printf("പ്രധാന");}
+read                        {printf("പഠ");}
+this                        {printf("ഇത്");}
+void                        {printf("ശൂന്യം");}
+and                         {printf("ഒപ്പം");}
+for                         {printf("വേണ്ടി");}
+int                         {printf("പൂർണ്ണസംഖ്യ");}
+new                         {printf("പുതിയ");}
+not                         {printf("അല്ല");}
+try                         {printf("ശ്രമിക്കുക");}
+as                          {printf("ഇവ");}
+do                          {printf("ചെയ്യുക");}
+if                          {printf("എങ്കിൽ");}
+in                          {printf("ഇൽ");}
+or                          {printf("അഥവാ");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

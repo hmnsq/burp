@@ -1,0 +1,40 @@
+%{
+/* tulu b2h.uhin: generated from the tulu lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("ಪ್ರತ್ಯಾಗಮ");}
+SHARED                      {printf("ಸಹಭಾಜಿತ");}
+STATIC                      {printf("ಸ್ಥಿರ");}
+STRING                      {printf("ಪದಾವಲೀ");}
+return                      {printf("ಪ್ರತ್ಯಾಗಮ");}
+CONST                       {printf("ಧ್ರುವ");}
+TIMER                       {printf("ಕಾಲಯನ್ತ್ರ");}
+WHILE                       {printf("ಯಾವತ್");}
+while                       {printf("ಯಾವತ್");}
+CALL                        {printf("ಆಹ್ವಾನ");}
+ELSE                        {printf("ಅನ್ಯಥಾ");}
+GOTO                        {printf("ಗಚ್ಛ");}
+goto                        {printf("ಗಚ್ಛ");}
+AND                         {printf("ಚ");}
+END                         {printf("ಅನ್ತ");}
+FOR                         {printf("ಪ್ರತಿ");}
+INT                         {printf("ಪೂರ್ಣಾಙ್ಕ");}
+LET                         {printf("ಅಸ್ತು");}
+NOT                         {printf("ನ");}
+and                         {printf("ಚ");}
+end                         {printf("ಅನ್ತ");}
+for                         {printf("ಪ್ರತಿ");}
+let                         {printf("ಅಸ್ತು");}
+not                         {printf("ನ");}
+AS                          {printf("ಇವ");}
+DO                          {printf("ಕುರು");}
+IF                          {printf("ಯದಿ");}
+OR                          {printf("ವಾ");}
+if                          {printf("ಯದಿ");}
+or                          {printf("ವಾ");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

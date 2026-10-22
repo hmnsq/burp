@@ -1,0 +1,51 @@
+%{
+/* punjabi b2h.uhin: generated from the punjabi lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("ਵਾਪਸ");}
+SHARED                      {printf("ਸਹਭਾਜਿਤ");}
+STATIC                      {printf("ਸਥਿਰ");}
+STRING                      {printf("ਸ਼ਬਦਮਾਲਾ");}
+return                      {printf("ਵਾਪਸ");}
+CONST                       {printf("ਅਚਲ");}
+TIMER                       {printf("ਕਾਲਯਨ੍ਤ੍ਰ");}
+WHILE                       {printf("ਜਦੋਂ");}
+gosub                       {printf("ਉਪ_ਜਾਓ");}
+input                       {printf("ਲਵੋ");}
+print                       {printf("ਛਾਪੋ");}
+while                       {printf("ਜਦੋਂ");}
+CALL                        {printf("ਬੁਲਾਓ");}
+ELSE                        {printf("ਨਹੀਂਤਾਂ");}
+GOTO                        {printf("ਜਾਓ");}
+goto                        {printf("ਜਾਓ");}
+next                        {printf("ਅਗਲਾ_ਗੇੜ");}
+step                        {printf("ਕਦਮ_ਨਾਲ");}
+then                        {printf("ਤਾਂ");}
+wend                        {printf("ਜਦੋਂਤੱਕ_ਅੰਤ");}
+AND                         {printf("ਅਤੇ");}
+END                         {printf("ਅੰਤ");}
+FOR                         {printf("ਲਈ");}
+INT                         {printf("ਪੂਰਨ");}
+LET                         {printf("ਮੰਨੋ");}
+NOT                         {printf("ਨਹੀਂ");}
+and                         {printf("ਅਤੇ");}
+dim                         {printf("ਆਕਾਰ");}
+end                         {printf("ਅੰਤ");}
+for                         {printf("ਲਈ");}
+let                         {printf("ਮੰਨੋ");}
+mod                         {printf("ਬਾਕੀ");}
+not                         {printf("ਨਹੀਂ");}
+rem                         {printf("ਟਿੱਪਣੀ");}
+AS                          {printf("ਇਵ");}
+DO                          {printf("ਕਰੋ");}
+IF                          {printf("ਜੇ");}
+OR                          {printf("ਜਾਂ");}
+if                          {printf("ਜੇ");}
+or                          {printf("ਜਾਂ");}
+to                          {printf("ਤੱਕ");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

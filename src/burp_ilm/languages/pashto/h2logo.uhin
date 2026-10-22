@@ -1,0 +1,25 @@
+%{
+/* pashto h2logo.uhin: generated from the pashto lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+قلم_پورته                   {printf("penup");}
+پاڼه_پاکه                   {printf("clearscreen");}
+قلم_ښکته                    {printf("pendown");}
+أمامي                       {printf("forward");}
+تکرار                       {printf("repeat");}
+که_نو                       {printf("ifelse");}
+انته                        {printf("end");}
+شاته                        {printf("back");}
+إذا                         {printf("if");}
+جوړ                         {printf("make");}
+چاپ                         {printf("print");}
+کور                         {printf("home");}
+کیڼ                         {printf("left");}
+تر                          {printf("to");}
+ښی                          {printf("right");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

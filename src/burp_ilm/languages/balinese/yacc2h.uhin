@@ -1,0 +1,30 @@
+%{
+/* balinese yacc2h.uhin: generated from the balinese lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+protected                   {printf("rak_sita");}
+register                    {printf("pa_njikaa");}
+volatile                    {printf("ca_ncala");}
+double                      {printf("dviguu_na");}
+inline                      {printf("anta_hstha");}
+return                      {printf("ᬯᬮᬶ");}
+signal                      {printf("sa_nkeeta");}
+sizeof                      {printf("parimaa_na");}
+struct                      {printf("sa_nracanaa");}
+\#else                      {printf("#ᬮᬶᬬ");}
+break                       {printf("bha_nga");}
+union                       {printf("sa_ngha");}
+while                       {printf("ᬲᭂᬤᭂᬮ");}
+case                        {printf("pak_sa");}
+char                        {printf("var_na");}
+else                        {printf("ᬮᬶᬬ");}
+enum                        {printf("ga_nanaa");}
+\#if                        {printf("#ᬬᬾᬦ᭄");}
+int                         {printf("puur_naa_nka");}
+if                          {printf("ᬬᬾᬦ᭄");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

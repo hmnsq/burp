@@ -1,0 +1,33 @@
+%{
+/* tibetan py2h.uhin: generated from the tibetan lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+implements                  {printf("ni_spaadita");}
+protected                   {printf("rak_sita");}
+volatile                    {printf("ca_ncala");}
+extends                     {printf("vistr_ta");}
+finally                     {printf("antata_h");}
+double                      {printf("dviguu_na");}
+return                      {printf("ཕྱིར");}
+break                       {printf("bha_nga");}
+catch                       {printf("gr_haa_na");}
+sleep                       {printf("su_supti");}
+throw                       {printf("k_sipa");}
+while                       {printf("སྐབས");}
+case                        {printf("pak_sa");}
+char                        {printf("var_na");}
+else                        {printf("དེ་མིན");}
+from                        {printf("ta_h");}
+main                        {printf("གཙོ");}
+and                         {printf("ca");}
+for                         {printf("ཆེད་དུ");}
+int                         {printf("ཧྲིལ");}
+not                         {printf("na");}
+if                          {printf("གལ་ཏེ");}
+in                          {printf("anta_h");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

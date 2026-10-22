@@ -1,0 +1,41 @@
+%{
+/* dari h2b.uhin: generated from the dari lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+برو_زیربرنامه               {printf("gosub");}
+پایان_مادامی                {printf("wend");}
+باقیمانده                   {printf("mod");}
+بعدی_دور                    {printf("next");}
+گام_به                      {printf("step");}
+آنگاه                       {printf("then");}
+ابعاد                       {printf("dim");}
+توضیح                       {printf("rem");}
+طالما                       {printf("WHILE");}
+مشترك                       {printf("SHARED");}
+أرجع                        {printf("RETURN");}
+اذهب                        {printf("GOTO");}
+افعل                        {printf("DO");}
+انته                        {printf("END");}
+بگیر                        {printf("input");}
+ثابت                        {printf("CONST");}
+ساكن                        {printf("STATIC");}
+صحيح                        {printf("INT");}
+ليكن                        {printf("LET");}
+مؤقت                        {printf("TIMER");}
+نادي                        {printf("CALL");}
+وإلا                        {printf("ELSE");}
+إذا                         {printf("IF");}
+لكل                         {printf("FOR");}
+ليس                         {printf("NOT");}
+چاپ                         {printf("print");}
+أو                          {printf("OR");}
+تا                          {printf("to");}
+كـ                          {printf("AS");}
+نص                          {printf("STRING");}
+و                           {printf("AND");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

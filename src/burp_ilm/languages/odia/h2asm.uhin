@@ -1,0 +1,30 @@
+%{
+/* odia h2asm.uhin: generated from the odia lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+ପୂର୍ଣ୍ଣସଂଖ୍ୟା               {printf("INT");}
+ଅଧ୍ଯଵସ୍ଯତି                  {printf("ASSUME");}
+ସର୍ବସାଧାରଣ                  {printf("PUBLIC");}
+ଅନ୍ତର୍ଭାଵ                   {printf("INCLUDE");}
+ପ୍ରକ୍ରିୟା                   {printf("PROC");}
+ଯେତେବେଳେ                    {printf("WHILE");}
+ଵୈଶ୍ଵିକ                     {printf("global");}
+ଅନ୍ୟଥା                      {printf("ELSE");}
+କିମ୍ବା                      {printf("OR");}
+ପ୍ରକାର                      {printf("TYPE");}
+ନୁହେଁ                       {printf("NOT");}
+ବାହ୍ୟ                       {printf("EXTERN");}
+ଭିତରେ                       {printf("IN");}
+ତାଲା                        {printf("LOCK");}
+ସୂଚକ                        {printf("PTR");}
+ଏବଂ                         {printf("AND");}
+ଏହି                         {printf("THIS");}
+ଡାକ                         {printf("CALL");}
+ଯଦି                         {printf("IF");}
+ଶେଷ                         {printf("END");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

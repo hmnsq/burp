@@ -1,0 +1,51 @@
+%{
+/* telugu b2h.uhin: generated from the telugu lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("తిరిగి");}
+SHARED                      {printf("సహభాజిత");}
+STATIC                      {printf("స్థిర");}
+STRING                      {printf("పదబంధం");}
+return                      {printf("తిరిగి");}
+CONST                       {printf("స్థిరరాశి");}
+TIMER                       {printf("కాలయన్త్ర");}
+WHILE                       {printf("అయితే");}
+gosub                       {printf("ఉప_వెళ్ళు");}
+input                       {printf("తీసుకో");}
+print                       {printf("ముద్రించు");}
+while                       {printf("అయితే");}
+CALL                        {printf("పిలువు");}
+ELSE                        {printf("లేకపోతే");}
+GOTO                        {printf("వెళ్ళు");}
+goto                        {printf("వెళ్ళు");}
+next                        {printf("తదుపరి_చక్రం");}
+step                        {printf("అడుగుతో");}
+then                        {printf("అప్పుడు");}
+wend                        {printf("అంతవరకు_ముగింపు");}
+AND                         {printf("మరియు");}
+END                         {printf("ముగింపు");}
+FOR                         {printf("కొరకు");}
+INT                         {printf("పూర్ణాంకం");}
+LET                         {printf("అనుకో");}
+NOT                         {printf("కాదు");}
+and                         {printf("మరియు");}
+dim                         {printf("పరిమాణం");}
+end                         {printf("ముగింపు");}
+for                         {printf("కొరకు");}
+let                         {printf("అనుకో");}
+mod                         {printf("శేషం");}
+not                         {printf("కాదు");}
+rem                         {printf("వ్యాఖ్య");}
+AS                          {printf("ఇవ");}
+DO                          {printf("చేయి");}
+IF                          {printf("ఒకవేళ");}
+OR                          {printf("లేదా");}
+if                          {printf("ఒకవేళ");}
+or                          {printf("లేదా");}
+to                          {printf("వరకు");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

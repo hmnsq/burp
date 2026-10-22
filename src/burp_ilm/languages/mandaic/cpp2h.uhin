@@ -1,0 +1,65 @@
+%{
+/* mandaic cpp2h.uhin: generated from the mandaic lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+namespace                   {printf("نطاق");}
+protected                   {printf("محمي");}
+\#include                   {printf("#ضمن");}
+continue                    {printf("استمر");}
+register                    {printf("سجل");}
+volatile                    {printf("متطاير");}
+default                     {printf("افتراضي");}
+private                     {printf("خاص");}
+typedef                     {printf("تعريفنوع");}
+assert                      {printf("أكد");}
+double                      {printf("مزدوج");}
+extern                      {printf("خارجي");}
+inline                      {printf("مضمن");}
+public                      {printf("عام");}
+return                      {printf("أرجع");}
+signal                      {printf("إشارة");}
+sizeof                      {printf("حجم");}
+static                      {printf("ساكن");}
+struct                      {printf("بنية");}
+switch                      {printf("بدل");}
+\#elif                      {printf("#وإلاإذا");}
+\#else                      {printf("#وإلا");}
+break                       {printf("اكسر");}
+catch                       {printf("امسك");}
+class                       {printf("صنف");}
+const                       {printf("ثابت");}
+false                       {printf("خطأ");}
+float                       {printf("عائم");}
+raise                       {printf("ارفع");}
+sleep                       {printf("نوم");}
+throw                       {printf("ارم");}
+union                       {printf("اتحاد");}
+while                       {printf("طالما");}
+write                       {printf("اكتب");}
+NULL                        {printf("عدم");}
+bool                        {printf("منطقي");}
+case                        {printf("حالة");}
+char                        {printf("حرف");}
+else                        {printf("وإلا");}
+enum                        {printf("تعداد");}
+free                        {printf("حرر");}
+goto                        {printf("اذهب");}
+main                        {printf("رئيسي");}
+pipe                        {printf("أنبوب");}
+read                        {printf("اقرأ");}
+sync                        {printf("متزامن");}
+this                        {printf("هذا");}
+void                        {printf("فراغ");}
+\#if                        {printf("#إذا");}
+for                         {printf("لكل");}
+int                         {printf("صحيح");}
+new                         {printf("جديد");}
+try                         {printf("حاول");}
+do                          {printf("افعل");}
+if                          {printf("إذا");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

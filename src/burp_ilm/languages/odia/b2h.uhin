@@ -1,0 +1,40 @@
+%{
+/* odia b2h.uhin: generated from the odia lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("ଫେରନ୍ତୁ");}
+SHARED                      {printf("ସହଭାଜିତ");}
+STATIC                      {printf("ସ୍ଥିର");}
+STRING                      {printf("ବାକ୍ୟ");}
+return                      {printf("ଫେରନ୍ତୁ");}
+CONST                       {printf("ଅଚଳ");}
+TIMER                       {printf("କାଲଯନ୍ତ୍ର");}
+WHILE                       {printf("ଯେତେବେଳେ");}
+while                       {printf("ଯେତେବେଳେ");}
+CALL                        {printf("ଡାକ");}
+ELSE                        {printf("ଅନ୍ୟଥା");}
+GOTO                        {printf("ଯାଅ");}
+goto                        {printf("ଯାଅ");}
+AND                         {printf("ଏବଂ");}
+END                         {printf("ଶେଷ");}
+FOR                         {printf("ପାଇଁ");}
+INT                         {printf("ପୂର୍ଣ୍ଣସଂଖ୍ୟା");}
+LET                         {printf("ଧର");}
+NOT                         {printf("ନୁହେଁ");}
+and                         {printf("ଏବଂ");}
+end                         {printf("ଶେଷ");}
+for                         {printf("ପାଇଁ");}
+let                         {printf("ଧର");}
+not                         {printf("ନୁହେଁ");}
+AS                          {printf("ଇଵ");}
+DO                          {printf("କର");}
+IF                          {printf("ଯଦି");}
+OR                          {printf("କିମ୍ବା");}
+if                          {printf("ଯଦି");}
+or                          {printf("କିମ୍ବା");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

@@ -1,0 +1,31 @@
+%{
+/* lao h2l.uhin: generated from the lao lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+\#ບໍ່ດັ່ງນັ້ນ               {printf("#else");}
+sa_nracanaa                 {printf("struct");}
+ບໍ່ດັ່ງນັ້ນ                 {printf("else");}
+anta_hstha                  {printf("inline");}
+parimaa_na                  {printf("sizeof");}
+dviguu_na                   {printf("double");}
+pa_njikaa                   {printf("register");}
+sa_nkeeta                   {printf("signal");}
+ຈຳນວນເຕັມ                   {printf("int");}
+ໃນຂະນະທີ່                   {printf("while");}
+ca_ncala                    {printf("volatile");}
+ga_nanaa                    {printf("enum");}
+rak_sita                    {printf("protected");}
+bha_nga                     {printf("break");}
+sa_ngha                     {printf("union");}
+ສົ່ງຄືນ                     {printf("return");}
+pak_sa                      {printf("case");}
+var_na                      {printf("char");}
+ສຳລັບ                       {printf("for");}
+\#ຖ້າ                       {printf("#if");}
+ຖ້າ                         {printf("if");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

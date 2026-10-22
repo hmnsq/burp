@@ -1,0 +1,30 @@
+%{
+/* assamese h2asm.uhin: generated from the assamese lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+অধ্যৱস্যতি                  {printf("ASSUME");}
+অন্তর্ভাৱ                   {printf("INCLUDE");}
+পূর্ণাঙ্ক                   {printf("INT");}
+যেতিয়ালৈ                   {printf("WHILE");}
+সার্ৱজনিক                   {printf("PUBLIC");}
+নির্দেশক                    {printf("PTR");}
+ৱৈশ্ৱিক                     {printf("global");}
+অন্যথা                      {printf("ELSE");}
+আহ্ৱান                      {printf("CALL");}
+প্রকার                      {printf("TYPE");}
+অন্তঃ                       {printf("IN");}
+বাহ্য                       {printf("EXTERN");}
+এতত্                        {printf("THIS");}
+তালক                        {printf("LOCK");}
+নহয়                        {printf("NOT");}
+ৱিধি                        {printf("PROC");}
+আৰু                         {printf("AND");}
+যদি                         {printf("IF");}
+শেষ                         {printf("END");}
+বা                          {printf("OR");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

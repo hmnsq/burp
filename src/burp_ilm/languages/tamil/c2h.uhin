@@ -1,0 +1,54 @@
+%{
+/* tamil c2h.uhin: generated from the tamil lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+protected                   {printf("பாதுகாக்கப்பட்ட");}
+\#include                   {printf("#அந்தர்பாவ");}
+continue                    {printf("தொடர்");}
+register                    {printf("பதிவு");}
+volatile                    {printf("நிலையற்ற");}
+default                     {printf("இயல்பு");}
+private                     {printf("தனிப்பட்ட");}
+typedef                     {printf("வகைவரை");}
+virtual                     {printf("மெய்நிகர்");}
+assert                      {printf("ப்ரதிஜ்ஞா");}
+double                      {printf("இரட்டை");}
+extern                      {printf("வெளி");}
+inline                      {printf("உள்வரி");}
+public                      {printf("பொது");}
+return                      {printf("திரும்பு");}
+signal                      {printf("சமிக்ஞை");}
+sizeof                      {printf("அளவு");}
+static                      {printf("நிலையான");}
+struct                      {printf("கட்டமைப்பு");}
+switch                      {printf("தேர்வு");}
+\#elif                      {printf("#அல்லதெனில்");}
+\#else                      {printf("#இல்லையெனில்");}
+break                       {printf("நிறுத்து");}
+const                       {printf("மாறிலி");}
+float                       {printf("தசம");}
+raise                       {printf("எழுப்பு");}
+union                       {printf("ஒன்றிப்பு");}
+while                       {printf("போது");}
+write                       {printf("லிக");}
+NULL                        {printf("வெற்று");}
+case                        {printf("நிலை");}
+char                        {printf("எழுத்து");}
+else                        {printf("இல்லையெனில்");}
+enum                        {printf("எண்ணிக்கை");}
+free                        {printf("விடுவி");}
+goto                        {printf("செல்");}
+main                        {printf("முதன்மை");}
+read                        {printf("பட");}
+void                        {printf("வெறுமை");}
+\#if                        {printf("#எனில்");}
+for                         {printf("க்கு");}
+int                         {printf("முழு");}
+do                          {printf("செய்");}
+if                          {printf("எனில்");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

@@ -1,0 +1,3 @@
+BURP carries, unmodified, the original Hindawi transducer tables under src/burp_ilm/upstream/chintamani, from
+github.com/hindawiai/chintamani; they keep that repository's licence. Everything else in this package is under the MIT licence
+in LICENSE. © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. BURP™ and Hindawi™ are his trademarks.

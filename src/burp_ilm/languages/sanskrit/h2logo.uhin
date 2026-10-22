@@ -1,0 +1,25 @@
+%{
+/* sanskrit h2logo.uhin: generated from the sanskrit lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+लेखनीम्_स्थापय              {printf("pendown");}
+लेखनीम्_उद्धर               {printf("penup");}
+अग्रप्रसार                  {printf("forward");}
+यदि_अन्यथा                  {printf("ifelse");}
+पटलं_शोधय                   {printf("clearscreen");}
+पर्यन्तम्                   {printf("to");}
+दक्षिणतः                    {printf("right");}
+पृष्ठतः                     {printf("back");}
+आवर्तय                      {printf("repeat");}
+मुद्रय                      {printf("print");}
+गृहम्                       {printf("home");}
+वामतः                       {printf("left");}
+अन्त                        {printf("end");}
+कुरु                        {printf("make");}
+यदि                         {printf("if");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

@@ -1,0 +1,40 @@
+%{
+/* manipuri_beng b2h.uhin: generated from the manipuri_beng lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("প্রত্যাগম");}
+SHARED                      {printf("সহভাজিত");}
+STATIC                      {printf("স্থির");}
+STRING                      {printf("পদাবলী");}
+return                      {printf("প্রত্যাগম");}
+CONST                       {printf("ধ্রুব");}
+TIMER                       {printf("কালযন্ত্র");}
+WHILE                       {printf("যাবত্");}
+while                       {printf("যাবত্");}
+CALL                        {printf("আহ্বান");}
+ELSE                        {printf("অন্যথা");}
+GOTO                        {printf("গচ্ছ");}
+goto                        {printf("গচ্ছ");}
+AND                         {printf("চ");}
+END                         {printf("অন্ত");}
+FOR                         {printf("প্রতি");}
+INT                         {printf("পূর্ণাঙ্ক");}
+LET                         {printf("অস্তু");}
+NOT                         {printf("ন");}
+and                         {printf("চ");}
+end                         {printf("অন্ত");}
+for                         {printf("প্রতি");}
+let                         {printf("অস্তু");}
+not                         {printf("ন");}
+AS                          {printf("ইব");}
+DO                          {printf("কুরু");}
+IF                          {printf("যদি");}
+OR                          {printf("বা");}
+if                          {printf("যদি");}
+or                          {printf("বা");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

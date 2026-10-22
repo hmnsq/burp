@@ -1,0 +1,69 @@
+%{
+/* prakrit h2py.uhin: generated from the prakrit lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+निष्पादित                   {printf("implements");}
+नोचेद्यदि                   {printf("elif");}
+पूर्णाङ्क                   {printf("int");}
+प्रतिज्ञा                   {printf("assert");}
+प्रत्यागम                   {printf("return");}
+सार्वजनिक                   {printf("public");}
+सुषुप्ति                    {printf("sleep");}
+अनुवर्त                     {printf("continue");}
+उत्थापय                     {printf("raise");}
+द्विगुण                     {printf("double");}
+विस्तृत                     {printf("extends");}
+वैश्विक                     {printf("global");}
+अण्णहा                      {printf("else");}
+अनामन्                      {printf("lambda");}
+अन्ततः                      {printf("finally");}
+अमूर्त                      {printf("abstract");}
+पदावली                      {printf("String");}
+रक्षित                      {printf("protected");}
+विकल्प                      {printf("switch");}
+स्वभाव                      {printf("default");}
+अन्तः                       {printf("in");}
+अपवाद                       {printf("except");}
+करेहि                       {printf("do");}
+क्षिप                       {printf("throw");}
+गुप्त                       {printf("private");}
+गृहाण                       {printf("catch");}
+चञ्चल                       {printf("volatile");}
+तन्तु                       {printf("Thread");}
+ध्रुव                       {printf("const");}
+प्रति                       {printf("for");}
+भिन्न                       {printf("float");}
+मिच्छ                       {printf("False");}
+वस्तु                       {printf("Object");}
+शून्य                       {printf("void");}
+सन्धि                       {printf("interface");}
+स्थिर                       {printf("static");}
+आनयन                        {printf("import");}
+एतत्                        {printf("this");}
+गच्छ                        {printf("goto");}
+नूतन                        {printf("new");}
+पक्ष                        {printf("case");}
+पहाण                        {printf("main");}
+पुटक                        {printf("package");}
+भङ्ग                        {printf("break");}
+यत्न                        {printf("try");}
+वर्ग                        {printf("class");}
+वर्ण                        {printf("char");}
+सच्च                        {printf("True");}
+जाव                         {printf("while");}
+लिख                         {printf("write");}
+इव                          {printf("as");}
+जइ                          {printf("if");}
+तः                          {printf("from");}
+दा                          {printf("yield");}
+पठ                          {printf("read");}
+पर                          {printf("super");}
+वा                          {printf("or");}
+ण                           {printf("not");}
+य                           {printf("and");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

@@ -1,0 +1,4 @@
+%%
+यदि    {printf("if");}
+.      {printf("%s", yytext);}
+%%

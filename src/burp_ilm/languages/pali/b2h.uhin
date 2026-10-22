@@ -1,0 +1,40 @@
+%{
+/* pali b2h.uhin: generated from the pali lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("पटिनिवत्त");}
+SHARED                      {printf("सहभाजित");}
+STATIC                      {printf("स्थिर");}
+STRING                      {printf("पदावली");}
+return                      {printf("पटिनिवत्त");}
+CONST                       {printf("ध्रुव");}
+TIMER                       {printf("कालयन्त्र");}
+WHILE                       {printf("याव");}
+while                       {printf("याव");}
+CALL                        {printf("आह्वान");}
+ELSE                        {printf("अञ्ञथा");}
+GOTO                        {printf("गच्छ");}
+goto                        {printf("गच्छ");}
+AND                         {printf("च");}
+END                         {printf("अन्त");}
+FOR                         {printf("अत्थाय");}
+INT                         {printf("पूर्णाङ्क");}
+LET                         {printf("अस्तु");}
+NOT                         {printf("न");}
+and                         {printf("च");}
+end                         {printf("अन्त");}
+for                         {printf("अत्थाय");}
+let                         {printf("अस्तु");}
+not                         {printf("न");}
+AS                          {printf("इव");}
+DO                          {printf("करोहि");}
+IF                          {printf("सचे");}
+OR                          {printf("वा");}
+if                          {printf("सचे");}
+or                          {printf("वा");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

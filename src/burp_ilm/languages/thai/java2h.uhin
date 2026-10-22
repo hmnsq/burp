@@ -1,0 +1,38 @@
+%{
+/* thai java2h.uhin: generated from the thai lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+implements                  {printf("ni_spaadita");}
+protected                   {printf("rak_sita");}
+register                    {printf("pa_njikaa");}
+volatile                    {printf("ca_ncala");}
+extends                     {printf("vistr_ta");}
+finally                     {printf("antata_h");}
+double                      {printf("dviguu_na");}
+inline                      {printf("anta_hstha");}
+return                      {printf("คืน");}
+signal                      {printf("sa_nkeeta");}
+sizeof                      {printf("parimaa_na");}
+struct                      {printf("sa_nracanaa");}
+\#else                      {printf("#มิฉะนั้น");}
+break                       {printf("bha_nga");}
+catch                       {printf("gr_haa_na");}
+sleep                       {printf("su_supti");}
+throw                       {printf("k_sipa");}
+union                       {printf("sa_ngha");}
+while                       {printf("ขณะ");}
+case                        {printf("pak_sa");}
+char                        {printf("var_na");}
+else                        {printf("มิฉะนั้น");}
+enum                        {printf("ga_nanaa");}
+main                        {printf("หลัก");}
+\#if                        {printf("#ถ้า");}
+for                         {printf("สำหรับ");}
+int                         {printf("จำนวนเต็ม");}
+if                          {printf("ถ้า");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

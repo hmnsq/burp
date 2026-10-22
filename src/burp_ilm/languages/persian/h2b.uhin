@@ -1,0 +1,30 @@
+%{
+/* persian h2b.uhin: generated from the persian lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+انجامبده                    {printf("DO");}
+بهعنوان                     {printf("AS");}
+فراخوان                     {printf("CALL");}
+بازگشت                      {printf("RETURN");}
+ایستا                       {printf("STATIC");}
+بگذار                       {printf("LET");}
+مشترك                       {printf("SHARED");}
+وگرنه                       {printf("ELSE");}
+پایان                       {printf("END");}
+برای                        {printf("FOR");}
+ثابت                        {printf("CONST");}
+رشته                        {printf("STRING");}
+صحیح                        {printf("INT");}
+مؤقت                        {printf("TIMER");}
+وقتی                        {printf("WHILE");}
+اگر                         {printf("IF");}
+برو                         {printf("GOTO");}
+نه                          {printf("NOT");}
+یا                          {printf("OR");}
+و                           {printf("AND");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

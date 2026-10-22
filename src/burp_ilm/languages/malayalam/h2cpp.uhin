@@ -1,0 +1,67 @@
+%{
+/* malayalam h2cpp.uhin: generated from the malayalam lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+\#അല്ലെങ്കിലെങ്കിൽ          {printf("#elif");}
+തിരഞ്ഞെടുപ്പ്               {printf("switch");}
+\#അല്ലെങ്കിൽ                {printf("#else");}
+പൂർണ്ണസംഖ്യ                 {printf("int");}
+സ്ഥിരസ്ഥിതി                 {printf("default");}
+\#അന്തര്ഭാവ                 {printf("#include");}
+അല്ലെങ്കിൽ                  {printf("else");}
+ശ്രമിക്കുക                  {printf("try");}
+സ്വതന്ത്രം                  {printf("free");}
+തരനിർവചനം                   {printf("typedef");}
+പിടിക്കുക                   {printf("catch");}
+പ്രതിജ്ഞാ                   {printf("assert");}
+രജിസ്റ്റർ                   {printf("register");}
+ആകുമ്പോൾ                    {printf("while");}
+ഉയർത്തുക                    {printf("raise");}
+നിർത്തുക                    {printf("break");}
+സംരക്ഷിത                    {printf("protected");}
+സുഷുപ്തി                    {printf("sleep");}
+സ്വകാര്യ                    {printf("private");}
+\#എങ്കിൽ                    {printf("#if");}
+ചെയ്യുക                     {printf("do");}
+നാമാകാശ                     {printf("namespace");}
+വലുപ്പം                     {printf("sizeof");}
+സമന്വയം                     {printf("sync");}
+അക്ഷരം                      {printf("char");}
+അസത്യം                      {printf("false");}
+അസ്ഥിര                      {printf("volatile");}
+എങ്കിൽ                      {printf("if");}
+എറിയുക                      {printf("throw");}
+തിരികെ                      {printf("return");}
+തുടരുക                      {printf("continue");}
+തർക്കം                      {printf("bool");}
+ദശാംശം                      {printf("float");}
+പ്രണാല                      {printf("pipe");}
+പ്രധാന                      {printf("main");}
+വരിയിൽ                      {printf("inline");}
+വേണ്ടി                      {printf("for");}
+വർഗ്ഗം                      {printf("class");}
+ശൂന്യം                      {printf("void");}
+സ്ഥിതം                      {printf("static");}
+സ്ഥിരം                      {printf("const");}
+അവസ്ഥ                       {printf("case");}
+ഇരട്ട                       {printf("double");}
+എണ്ണൽ                       {printf("enum");}
+പുതിയ                       {printf("new");}
+പോകുക                       {printf("goto");}
+ബാഹ്യ                       {printf("extern");}
+ശൂന്യ                       {printf("NULL");}
+സത്യം                       {printf("true");}
+പൊതു                        {printf("public");}
+മായാ                        {printf("virtual");}
+സംഘം                        {printf("union");}
+സൂചന                        {printf("signal");}
+ഇത്                         {printf("this");}
+ഘടന                         {printf("struct");}
+ലിഖ                         {printf("write");}
+പഠ                          {printf("read");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

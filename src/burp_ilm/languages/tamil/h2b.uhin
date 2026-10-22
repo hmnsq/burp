@@ -1,0 +1,30 @@
+%{
+/* tamil h2b.uhin: generated from the tamil lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+இல்லையெனில்                 {printf("ELSE");}
+காலயந்த்ர                   {printf("TIMER");}
+திரும்பு                    {printf("RETURN");}
+நிலையான                     {printf("STATIC");}
+மற்றும்                     {printf("AND");}
+ஸஹபாஜித                     {printf("SHARED");}
+அல்லது                      {printf("OR");}
+மாறிலி                      {printf("CONST");}
+இல்லை                       {printf("NOT");}
+எனில்                       {printf("IF");}
+கொள்                        {printf("LET");}
+க்கு                        {printf("FOR");}
+சரம்                        {printf("STRING");}
+செய்                        {printf("DO");}
+செல்                        {printf("GOTO");}
+போது                        {printf("WHILE");}
+முடி                        {printf("END");}
+முழு                        {printf("INT");}
+அழை                         {printf("CALL");}
+இவ                          {printf("AS");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

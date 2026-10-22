@@ -1,0 +1,41 @@
+%{
+/* punjabi_shahmukhi h2b.uhin: generated from the punjabi_shahmukhi lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+جدوں_تک_انت                 {printf("wend");}
+اگلا_گیڑ                    {printf("next");}
+ذیلی_جاؤ                    {printf("gosub");}
+قدم_نال                     {printf("step");}
+تبصرہ                       {printf("rem");}
+طالما                       {printf("WHILE");}
+مشترك                       {printf("SHARED");}
+چھاپو                       {printf("print");}
+أرجع                        {printf("RETURN");}
+اذهب                        {printf("GOTO");}
+افعل                        {printf("DO");}
+انته                        {printf("END");}
+اکار                        {printf("dim");}
+باقی                        {printf("mod");}
+ثابت                        {printf("CONST");}
+ساكن                        {printf("STATIC");}
+صحيح                        {printf("INT");}
+ليكن                        {printf("LET");}
+مؤقت                        {printf("TIMER");}
+نادي                        {printf("CALL");}
+وإلا                        {printf("ELSE");}
+إذا                         {printf("IF");}
+تاں                         {printf("then");}
+لكل                         {printf("FOR");}
+لوو                         {printf("input");}
+ليس                         {printf("NOT");}
+أو                          {printf("OR");}
+تک                          {printf("to");}
+كـ                          {printf("AS");}
+نص                          {printf("STRING");}
+و                           {printf("AND");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

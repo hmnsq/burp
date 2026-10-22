@@ -1,0 +1,69 @@
+%{
+/* tamil h2py.uhin: generated from the tamil lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+பாதுகாக்கப்பட்ட             {printf("protected");}
+செயல்படுத்து                {printf("implements");}
+நீட்டிக்கும்                {printf("extends");}
+இல்லையெனில்                 {printf("else");}
+விதிவிலக்கு                 {printf("except");}
+அல்லதெனில்                  {printf("elif");}
+இறக்குமதி                   {printf("import");}
+தனிப்பட்ட                   {printf("private");}
+ப்ரதிஜ்ஞா                   {printf("assert");}
+இடைமுகம்                    {printf("interface");}
+இறுதியாக                    {printf("finally");}
+திரும்பு                    {printf("return");}
+தொகுப்பு                    {printf("package");}
+நிறுத்து                    {printf("break");}
+நிலையற்ற                    {printf("volatile");}
+ஸுஷுப்தி                    {printf("sleep");}
+எழுத்து                     {printf("char");}
+எழுப்பு                     {printf("raise");}
+சுருக்க                     {printf("abstract");}
+நிலையான                     {printf("static");}
+பெயரிலி                     {printf("lambda");}
+மற்றும்                     {printf("and");}
+முதன்மை                     {printf("main");}
+வகுப்பு                     {printf("class");}
+வைஶ்விக                     {printf("global");}
+அல்லது                      {printf("or");}
+இயல்பு                      {printf("default");}
+இரட்டை                      {printf("double");}
+தேர்வு                      {printf("switch");}
+பொருள்                      {printf("Object");}
+மாறிலி                      {printf("const");}
+வெறுமை                      {printf("void");}
+இல்லை                       {printf("not");}
+உண்மை                       {printf("True");}
+எனில்                       {printf("if");}
+தொடர்                       {printf("continue");}
+புதிய                       {printf("new");}
+முயல்                       {printf("try");}
+க்கு                        {printf("for");}
+சரம்                        {printf("String");}
+செய்                        {printf("do");}
+செல்                        {printf("goto");}
+நிலை                        {printf("case");}
+பிடி                        {printf("catch");}
+பொது                        {printf("public");}
+பொய்                        {printf("False");}
+போது                        {printf("while");}
+முழு                        {printf("int");}
+மேல்                        {printf("super");}
+இது                         {printf("this");}
+இழை                         {printf("Thread");}
+உள்                         {printf("in");}
+எறி                         {printf("throw");}
+தசம                         {printf("float");}
+லிக                         {printf("write");}
+இவ                          {printf("as");}
+தஃ                          {printf("from");}
+தா                          {printf("yield");}
+பட                          {printf("read");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

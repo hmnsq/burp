@@ -1,0 +1,30 @@
+%{
+/* malayalam h2asm.uhin: generated from the malayalam lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+പൂർണ്ണസംഖ്യ                 {printf("INT");}
+അധ്യവസ്യതി                  {printf("ASSUME");}
+അല്ലെങ്കിൽ                  {printf("ELSE");}
+അന്തര്ഭാവ                   {printf("INCLUDE");}
+വിളിക്കുക                   {printf("CALL");}
+ആകുമ്പോൾ                    {printf("WHILE");}
+വൈശ്വിക                     {printf("global");}
+അവസാനം                      {printf("END");}
+എങ്കിൽ                      {printf("IF");}
+പൂട്ട്                      {printf("LOCK");}
+ഒപ്പം                       {printf("AND");}
+നടപടി                       {printf("PROC");}
+ബാഹ്യ                       {printf("EXTERN");}
+സൂചകം                       {printf("PTR");}
+അഥവാ                        {printf("OR");}
+അല്ല                        {printf("NOT");}
+പൊതു                        {printf("PUBLIC");}
+ഇത്                         {printf("THIS");}
+തരം                         {printf("TYPE");}
+ഇൽ                          {printf("IN");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

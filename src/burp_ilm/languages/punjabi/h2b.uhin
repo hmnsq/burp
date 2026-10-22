@@ -1,0 +1,41 @@
+%{
+/* punjabi h2b.uhin: generated from the punjabi lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+ਜਦੋਂਤੱਕ_ਅੰਤ                 {printf("wend");}
+ਕਾਲਯਨ੍ਤ੍ਰ                   {printf("TIMER");}
+ਅਗਲਾ_ਗੇੜ                    {printf("next");}
+ਸ਼ਬਦਮਾਲਾ                    {printf("STRING");}
+ਕਦਮ_ਨਾਲ                     {printf("step");}
+ਨਹੀਂਤਾਂ                     {printf("ELSE");}
+ਸਹਭਾਜਿਤ                     {printf("SHARED");}
+ਉਪ_ਜਾਓ                      {printf("gosub");}
+ਟਿੱਪਣੀ                      {printf("rem");}
+ਬੁਲਾਓ                       {printf("CALL");}
+ਆਕਾਰ                        {printf("dim");}
+ਛਾਪੋ                        {printf("print");}
+ਜਦੋਂ                        {printf("WHILE");}
+ਨਹੀਂ                        {printf("NOT");}
+ਪੂਰਨ                        {printf("INT");}
+ਬਾਕੀ                        {printf("mod");}
+ਮੰਨੋ                        {printf("LET");}
+ਵਾਪਸ                        {printf("RETURN");}
+ਸਥਿਰ                        {printf("STATIC");}
+ਅਚਲ                         {printf("CONST");}
+ਅਤੇ                         {printf("AND");}
+ਅੰਤ                         {printf("END");}
+ਕਰੋ                         {printf("DO");}
+ਜਾਂ                         {printf("OR");}
+ਜਾਓ                         {printf("GOTO");}
+ਤਾਂ                         {printf("then");}
+ਤੱਕ                         {printf("to");}
+ਲਵੋ                         {printf("input");}
+ਇਵ                          {printf("AS");}
+ਜੇ                          {printf("IF");}
+ਲਈ                          {printf("FOR");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

@@ -1,0 +1,34 @@
+%{
+/* limbu cpp2h.uhin: generated from the limbu lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+protected                   {printf("rak_sita");}
+register                    {printf("pa_njikaa");}
+volatile                    {printf("ca_ncala");}
+double                      {printf("dviguu_na");}
+inline                      {printf("anta_hstha");}
+return                      {printf("ᤀᤡᤴ");}
+signal                      {printf("sa_nkeeta");}
+sizeof                      {printf("parimaa_na");}
+struct                      {printf("sa_nracanaa");}
+\#else                      {printf("#ᤀᤡ᤺ᤆᤡ");}
+break                       {printf("bha_nga");}
+catch                       {printf("gr_haa_na");}
+sleep                       {printf("su_supti");}
+throw                       {printf("k_sipa");}
+union                       {printf("sa_ngha");}
+while                       {printf("ᤀᤠ᤺");}
+case                        {printf("pak_sa");}
+char                        {printf("var_na");}
+else                        {printf("ᤀᤡ᤺ᤆᤡ");}
+enum                        {printf("ga_nanaa");}
+pipe                        {printf("pra_naala");}
+\#if                        {printf("#ᤀᤡ᤺");}
+int                         {printf("puur_naa_nka");}
+if                          {printf("ᤀᤡ᤺");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

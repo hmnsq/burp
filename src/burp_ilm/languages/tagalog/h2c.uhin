@@ -1,0 +1,31 @@
+%{
+/* tagalog h2c.uhin: generated from the tagalog lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+puur_naa_nka                {printf("int");}
+\#kung_hindi                {printf("#else");}
+sa_nracanaa                 {printf("struct");}
+पांगुनाहिंग                 {printf("main");}
+anta_hstha                  {printf("inline");}
+kung_hindi                  {printf("else");}
+parimaa_na                  {printf("sizeof");}
+dviguu_na                   {printf("double");}
+pa_njikaa                   {printf("register");}
+sa_nkeeta                   {printf("signal");}
+ca_ncala                    {printf("volatile");}
+ga_nanaa                    {printf("enum");}
+rak_sita                    {printf("protected");}
+bha_nga                     {printf("break");}
+sa_ngha                     {printf("union");}
+habang                      {printf("while");}
+ibalik                      {printf("return");}
+pak_sa                      {printf("case");}
+var_na                      {printf("char");}
+\#kung                      {printf("#if");}
+kung                        {printf("if");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

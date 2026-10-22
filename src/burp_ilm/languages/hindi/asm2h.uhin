@@ -1,0 +1,14 @@
+%{
+/*
+Copyright (C) 2026 Abhishek Choudhary
+Hindawi Hindi — Assembly to Hindawi
+*/
+%}
+
+%%
+
+
+.                           {printf("%s", yytext);}
+\n                          {printf("\n");}
+
+%%

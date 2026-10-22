@@ -1,0 +1,30 @@
+%{
+/* gujarati h2b.uhin: generated from the gujarati lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+કાલયન્ત્ર                   {printf("TIMER");}
+પૂર્ણાંક                    {printf("INT");}
+શબ્દમાળા                    {printf("STRING");}
+સહભાજિત                     {printf("SHARED");}
+જ્યારે                      {printf("WHILE");}
+નહીંતર                      {printf("ELSE");}
+બોલાવો                      {printf("CALL");}
+સ્થિર                       {printf("STATIC");}
+અથવા                        {printf("OR");}
+ધારો                        {printf("LET");}
+નહીં                        {printf("NOT");}
+પાછા                        {printf("RETURN");}
+માટે                        {printf("FOR");}
+અંત                         {printf("END");}
+અચલ                         {printf("CONST");}
+અને                         {printf("AND");}
+કરો                         {printf("DO");}
+જાઓ                         {printf("GOTO");}
+ઇવ                          {printf("AS");}
+જો                          {printf("IF");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

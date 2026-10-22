@@ -1,0 +1,65 @@
+%{
+/* syriac h2cpp.uhin: generated from the syriac lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+\#وإلاإذا                   {printf("#elif");}
+تعريفنوع                    {printf("typedef");}
+افتراضي                     {printf("default");}
+\#ܐܚܪܢܐ                     {printf("#else");}
+متزامن                      {printf("sync");}
+متطاير                      {printf("volatile");}
+أنبوب                       {printf("pipe");}
+إشارة                       {printf("signal");}
+اتحاد                       {printf("union");}
+استمر                       {printf("continue");}
+تعداد                       {printf("enum");}
+خارجي                       {printf("extern");}
+مزدوج                       {printf("double");}
+منطقي                       {printf("bool");}
+ܐܚܪܢܐ                       {printf("else");}
+\#ضمن                       {printf("#include");}
+اذهب                        {printf("goto");}
+ارفع                        {printf("raise");}
+اقرأ                        {printf("read");}
+اكتب                        {printf("write");}
+اكسر                        {printf("break");}
+امسك                        {printf("catch");}
+بنية                        {printf("struct");}
+ثابت                        {printf("const");}
+جديد                        {printf("new");}
+حالة                        {printf("case");}
+حاول                        {printf("try");}
+ساكن                        {printf("static");}
+صحيح                        {printf("int");}
+عائم                        {printf("float");}
+فراغ                        {printf("void");}
+محمي                        {printf("protected");}
+مضمن                        {printf("inline");}
+نطاق                        {printf("namespace");}
+ܕܓܠܐ                        {printf("false");}
+ܫܪܪܐ                        {printf("true");}
+\#ܐܢ                        {printf("#if");}
+أكد                         {printf("assert");}
+ارم                         {printf("throw");}
+بدل                         {printf("switch");}
+حجم                         {printf("sizeof");}
+حرر                         {printf("free");}
+حرف                         {printf("char");}
+خاص                         {printf("private");}
+سجل                         {printf("register");}
+صنف                         {printf("class");}
+عام                         {printf("public");}
+عدم                         {printf("NULL");}
+لكل                         {printf("for");}
+نوم                         {printf("sleep");}
+هذا                         {printf("this");}
+ܟܡܐ                         {printf("while");}
+ܥܒܕ                         {printf("do");}
+ܦܢܐ                         {printf("return");}
+ܐܢ                          {printf("if");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

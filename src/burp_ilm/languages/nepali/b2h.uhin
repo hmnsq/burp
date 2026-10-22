@@ -1,0 +1,41 @@
+%{
+/* nepali b2h.uhin: generated from the nepali lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("फर्काऊ");}
+SHARED                      {printf("सहभाजित");}
+STATIC                      {printf("स्थिर");}
+STRING                      {printf("पदावली");}
+return                      {printf("फर्काऊ");}
+CONST                       {printf("अचर");}
+TIMER                       {printf("कालयन्त्र");}
+WHILE                       {printf("जबसम्म");}
+while                       {printf("जबसम्म");}
+CALL                        {printf("आह्वान");}
+ELSE                        {printf("अन्यथा");}
+GOTO                        {printf("गच्छ");}
+goto                        {printf("गच्छ");}
+AND                         {printf("र");}
+END                         {printf("अन्त्य");}
+EOF                         {printf("खातापूर्ण");}
+FOR                         {printf("लागि");}
+INT                         {printf("पूर्णाङ्क");}
+LET                         {printf("अस्तु");}
+NOT                         {printf("होइन");}
+and                         {printf("र");}
+end                         {printf("अन्त्य");}
+for                         {printf("लागि");}
+let                         {printf("अस्तु");}
+not                         {printf("होइन");}
+AS                          {printf("इव");}
+DO                          {printf("गर");}
+IF                          {printf("यदि");}
+OR                          {printf("वा");}
+if                          {printf("यदि");}
+or                          {printf("वा");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

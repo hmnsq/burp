@@ -1,0 +1,16 @@
+%{
+/* bulgarian h2py.uhin: generated from the bulgarian lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+докато                      {printf("while");}
+върни                       {printf("return");}
+иначе                       {printf("else");}
+цяло                        {printf("int");}
+ако                         {printf("if");}
+за                          {printf("for");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

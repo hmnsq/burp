@@ -1,0 +1,31 @@
+%{
+/* marathi h2b.uhin: generated from the marathi lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+अक्षरमाला                   {printf("STRING");}
+कालयन्त्र                   {printf("TIMER");}
+खातापूर्ण                   {printf("EOF");}
+पूर्णांक                    {printf("INT");}
+स्थिरांक                    {printf("CONST");}
+सहभाजित                     {printf("SHARED");}
+अन्यथा                      {printf("ELSE");}
+पर्यंत                      {printf("WHILE");}
+किंवा                       {printf("OR");}
+बोलवा                       {printf("CALL");}
+स्थिर                       {printf("STATIC");}
+नाही                        {printf("NOT");}
+शेवट                        {printf("END");}
+समजा                        {printf("LET");}
+साठी                        {printf("FOR");}
+आणि                         {printf("AND");}
+करा                         {printf("DO");}
+परत                         {printf("RETURN");}
+इव                          {printf("AS");}
+जर                          {printf("IF");}
+जा                          {printf("GOTO");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

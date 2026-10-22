@@ -1,0 +1,22 @@
+%{
+/* santali b2h.uhin: generated from the santali lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("ᱨᱩᱣᱟᱹᱲ");}
+return                      {printf("ᱨᱩᱣᱟᱹᱲ");}
+WHILE                       {printf("ᱡᱚᱠᱷᱚᱱ");}
+while                       {printf("ᱡᱚᱠᱷᱚᱱ");}
+ELSE                        {printf("ᱵᱟᱝ");}
+AND                         {printf("ca");}
+INT                         {printf("puur_naa_nka");}
+NOT                         {printf("na");}
+and                         {printf("ca");}
+not                         {printf("na");}
+IF                          {printf("ᱡᱩᱫᱤ");}
+if                          {printf("ᱡᱩᱫᱤ");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

@@ -1,0 +1,25 @@
+%{
+/* kannada logo2h.uhin: generated from the kannada lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+clearscreen                 {printf("ಪರದೆ_ಶುಚಿ");}
+forward                     {printf("ಅಗ್ರಪ್ರಸಾರ");}
+pendown                     {printf("ಲೇಖನಿ_ಇಳಿಸು");}
+ifelse                      {printf("ಆದರೆ_ಇಲ್ಲದಿದ್ದರೆ");}
+repeat                      {printf("ಪುನರಾವರ್ತಿಸು");}
+penup                       {printf("ಲೇಖನಿ_ಎತ್ತು");}
+print                       {printf("ಮುದ್ರಿಸು");}
+right                       {printf("ಬಲ");}
+back                        {printf("ಹಿಂದೆ");}
+home                        {printf("ಮನೆ");}
+left                        {printf("ಎಡ");}
+make                        {printf("ಮಾಡು");}
+end                         {printf("ಅಂತ್ಯ");}
+if                          {printf("ಆದರೆ");}
+to                          {printf("ವರೆಗೆ");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

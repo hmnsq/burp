@@ -1,0 +1,18 @@
+%{
+/* burmese h2b.uhin: generated from the burmese lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+ကိန်းပြည့်                  {printf("INT");}
+မဟုတ်ပါက                    {printf("ELSE");}
+ပြန်ပေး                     {printf("RETURN");}
+နေစဉ်                       {printf("WHILE");}
+အကယ်၍                       {printf("IF");}
+အတွက်                       {printf("FOR");}
+ca                          {printf("AND");}
+na                          {printf("NOT");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

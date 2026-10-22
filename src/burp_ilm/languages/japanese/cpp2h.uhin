@@ -1,0 +1,19 @@
+%{
+/* japanese cpp2h.uhin: generated from the japanese lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+return                      {printf("戻る");}
+\#else                      {printf("#否则");}
+while                       {printf("ながら");}
+else                        {printf("否则");}
+main                        {printf("メインページ");}
+\#if                        {printf("#もし");}
+for                         {printf("ために");}
+int                         {printf("整数");}
+if                          {printf("もし");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

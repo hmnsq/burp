@@ -1,0 +1,69 @@
+%{
+/* persian py2h.uhin: generated from the persian lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+implements                  {printf("پیادهسازی");}
+interface                   {printf("واسط");}
+protected                   {printf("محافظتشده");}
+abstract                    {printf("انتزاعی");}
+continue                    {printf("ادامه");}
+volatile                    {printf("فرار");}
+default                     {printf("پیشفرض");}
+extends                     {printf("گسترش");}
+finally                     {printf("سرانجام");}
+package                     {printf("بسته");}
+private                     {printf("خصوصی");}
+Object                      {printf("شیء");}
+String                      {printf("رشته");}
+Thread                      {printf("نخ");}
+assert                      {printf("أكد");}
+double                      {printf("دوگانه");}
+except                      {printf("استثنا");}
+global                      {printf("عام");}
+import                      {printf("واردکن");}
+lambda                      {printf("بینام");}
+public                      {printf("عمومی");}
+return                      {printf("بازگشت");}
+static                      {printf("ایستا");}
+switch                      {printf("انتخاب");}
+False                       {printf("نادرست");}
+break                       {printf("بشکن");}
+catch                       {printf("بگیر");}
+class                       {printf("رده");}
+const                       {printf("ثابت");}
+float                       {printf("اعشاری");}
+raise                       {printf("بالاببر");}
+sleep                       {printf("نوم");}
+super                       {printf("ابر");}
+throw                       {printf("پرتابکن");}
+while                       {printf("وقتی");}
+write                       {printf("اكتب");}
+yield                       {printf("بده");}
+True                        {printf("درست");}
+case                        {printf("حالت");}
+char                        {printf("نویسه");}
+elif                        {printf("وگرنهاگر");}
+else                        {printf("وگرنه");}
+from                        {printf("از");}
+goto                        {printf("برو");}
+main                        {printf("اصلی");}
+read                        {printf("اقرأ");}
+this                        {printf("این");}
+void                        {printf("تهی");}
+and                         {printf("و");}
+for                         {printf("برای");}
+int                         {printf("صحیح");}
+new                         {printf("جدید");}
+not                         {printf("نه");}
+try                         {printf("تلاش");}
+as                          {printf("بهعنوان");}
+do                          {printf("انجامبده");}
+if                          {printf("اگر");}
+in                          {printf("در");}
+or                          {printf("یا");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

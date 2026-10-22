@@ -1,0 +1,41 @@
+%{
+/* kannada h2b.uhin: generated from the kannada lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+ಮುಂದಿನ_ಸುತ್ತು               {printf("next");}
+ಇಲ್ಲದಿದ್ದರೆ                 {printf("ELSE");}
+ಹೆಜ್ಜೆಯಲ್ಲಿ                 {printf("step");}
+ಕಾಲಯನ್ತ್ರ                   {printf("TIMER");}
+ತನಕ_ಅಂತ್ಯ                   {printf("wend");}
+ಹಿಂತಿರುಗಿ                   {printf("RETURN");}
+ತೆಗೆದುಕೊ                    {printf("input");}
+ಪೂರ್ಣಾಂಕ                    {printf("INT");}
+ಮುದ್ರಿಸು                    {printf("print");}
+ಸ್ಥಿರಾಂಕ                    {printf("CONST");}
+ಉಪ_ಹೋಗು                     {printf("gosub");}
+ಟಿಪ್ಪಣಿ                     {printf("rem");}
+ಸಹಭಾಜಿತ                     {printf("SHARED");}
+ಹಾಗಾದರೆ                     {printf("then");}
+ಪದಪುಂಜ                      {printf("STRING");}
+ಅಂತ್ಯ                       {printf("END");}
+ಮತ್ತು                       {printf("AND");}
+ವರೆಗೆ                       {printf("to");}
+ಸ್ಥಿರ                       {printf("STATIC");}
+ಅಥವಾ                        {printf("OR");}
+ಅಲ್ಲ                        {printf("NOT");}
+ಆದರೆ                        {printf("IF");}
+ಆಯಾಮ                        {printf("dim");}
+ಇರಲಿ                        {printf("LET");}
+ಗಾಗಿ                        {printf("FOR");}
+ಮಾಡು                        {printf("DO");}
+ಹೋಗು                        {printf("GOTO");}
+ಕರೆ                         {printf("CALL");}
+ಶೇಷ                         {printf("mod");}
+ಆಗ                          {printf("WHILE");}
+ಇವ                          {printf("AS");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

@@ -1,0 +1,30 @@
+%{
+/* prakrit h2b.uhin: generated from the prakrit lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+कालयन्त्र                   {printf("TIMER");}
+पूर्णाङ्क                   {printf("INT");}
+प्रत्यागम                   {printf("RETURN");}
+सहभाजित                     {printf("SHARED");}
+अण्णहा                      {printf("ELSE");}
+आह्वान                      {printf("CALL");}
+पदावली                      {printf("STRING");}
+अस्तु                       {printf("LET");}
+करेहि                       {printf("DO");}
+ध्रुव                       {printf("CONST");}
+प्रति                       {printf("FOR");}
+स्थिर                       {printf("STATIC");}
+अन्त                        {printf("END");}
+गच्छ                        {printf("GOTO");}
+जाव                         {printf("WHILE");}
+इव                          {printf("AS");}
+जइ                          {printf("IF");}
+वा                          {printf("OR");}
+ण                           {printf("NOT");}
+य                           {printf("AND");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

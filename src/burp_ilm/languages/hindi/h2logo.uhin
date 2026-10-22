@@ -1,0 +1,15 @@
+%{
+/*
+Copyright (C) 2026 Abhishek Choudhary
+Hindawi Hindi — Robot (LOGO) Shaili
+Generated from lang_hindi.csv.
+*/
+%}
+
+%%
+
+
+.                           {printf("%s", yytext);}
+\n                          {printf("\n");}
+
+%%

@@ -1,0 +1,18 @@
+%{
+/* vietnamese yacc2h.uhin: generated from the vietnamese lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+return                      {printf("trả_về");}
+\#else                      {printf("#không_thì");}
+while                       {printf("trong_khi");}
+else                        {printf("không_thì");}
+\#if                        {printf("#nếu");}
+for                         {printf("cho");}
+int                         {printf("số_nguyên");}
+if                          {printf("nếu");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

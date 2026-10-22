@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "burp-ilm"
+version = "2026.10.0"
+description = "BURP: put source code into any of Hindawi's human languages and back, byte for byte, and report what is still missing."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{name = "Abhishek Choudhary", email = "obonac@users.noreply.github.com"}]
+requires-python = ">=3.9"
+dependencies = []
+keywords = ["Hindawi", "Project ILM", "BURP", "localisation", "programming in native languages", "source ingestion"]
+classifiers = ["Programming Language :: Python :: 3", "Operating System :: POSIX :: Linux", "Topic :: Software Development :: Compilers"]
+
+[project.urls]
+Homepage = "https://github.com/hmnsq/burp"
+Hindawi = "https://github.com/hindawiai/hindawi2026.10"
+
+[project.scripts]
+burp = "burp_ilm.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+burp_ilm = ["burp/*", "burp/**/*", "languages/**/*", "upstream/**/*", "tools/**/*"]

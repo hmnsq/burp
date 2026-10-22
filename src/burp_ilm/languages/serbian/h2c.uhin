@@ -1,0 +1,18 @@
+%{
+/* serbian h2c.uhin: generated from the serbian lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+\#инако                     {printf("#else");}
+врати                       {printf("return");}
+инако                       {printf("else");}
+\#ако                       {printf("#if");}
+ако                         {printf("if");}
+док                         {printf("while");}
+цео                         {printf("int");}
+за                          {printf("for");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

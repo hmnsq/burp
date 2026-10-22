@@ -1,0 +1,51 @@
+%{
+/* urdu b2h.uhin: generated from the urdu lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("واپس");}
+SHARED                      {printf("مشترك");}
+STATIC                      {printf("ساکن");}
+STRING                      {printf("جملہ");}
+return                      {printf("واپس");}
+CONST                       {printf("ثابت");}
+TIMER                       {printf("مؤقت");}
+WHILE                       {printf("جب");}
+gosub                       {printf("ذیلی_جاؤ");}
+input                       {printf("حاصل_کرو");}
+print                       {printf("چھاپو");}
+while                       {printf("جب");}
+CALL                        {printf("بلاؤ");}
+ELSE                        {printf("ورنہ");}
+GOTO                        {printf("جاؤ");}
+goto                        {printf("جاؤ");}
+next                        {printf("اگلا_چکر");}
+step                        {printf("قدم_سے");}
+then                        {printf("تو");}
+wend                        {printf("جب_تک_ختم");}
+AND                         {printf("اور");}
+END                         {printf("اختتام");}
+FOR                         {printf("برائے");}
+INT                         {printf("صحیح");}
+LET                         {printf("مانو");}
+NOT                         {printf("نہیں");}
+and                         {printf("اور");}
+dim                         {printf("ابعاد");}
+end                         {printf("اختتام");}
+for                         {printf("برائے");}
+let                         {printf("مانو");}
+mod                         {printf("باقی");}
+not                         {printf("نہیں");}
+rem                         {printf("تبصرہ");}
+AS                          {printf("بطور");}
+DO                          {printf("کرو");}
+IF                          {printf("اگر");}
+OR                          {printf("یا");}
+if                          {printf("اگر");}
+or                          {printf("یا");}
+to                          {printf("تک");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

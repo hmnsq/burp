@@ -1,0 +1,14 @@
+%{
+/* korean asm2h.uhin: generated from the korean lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+WHILE                       {printf("동안");}
+ELSE                        {printf("아니면");}
+INT                         {printf("정수");}
+IF                          {printf("만약");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

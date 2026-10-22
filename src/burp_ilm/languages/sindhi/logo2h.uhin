@@ -1,0 +1,25 @@
+%{
+/* sindhi logo2h.uhin: generated from the sindhi lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+clearscreen                 {printf("پردو_صاف");}
+forward                     {printf("أمامي");}
+pendown                     {printf("قلم_هيٺ");}
+ifelse                      {printf("جيڪڏهن_ٻي_صورت");}
+repeat                      {printf("ورجايو");}
+penup                       {printf("قلم_مٿي");}
+print                       {printf("ڇاپيو");}
+right                       {printf("ساڄي");}
+back                        {printf("پوئتي");}
+home                        {printf("گهر");}
+left                        {printf("کاٻي");}
+make                        {printf("ٺاهيو");}
+end                         {printf("انته");}
+if                          {printf("إذا");}
+to                          {printf("تائين");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

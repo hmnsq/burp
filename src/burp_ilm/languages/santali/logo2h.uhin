@@ -1,0 +1,11 @@
+%{
+/* santali logo2h.uhin: generated from the santali lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+if                          {printf("ᱡᱩᱫᱤ");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

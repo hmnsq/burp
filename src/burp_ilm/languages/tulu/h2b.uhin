@@ -1,0 +1,30 @@
+%{
+/* tulu h2b.uhin: generated from the tulu lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+ಕಾಲಯನ್ತ್ರ                   {printf("TIMER");}
+ಪೂರ್ಣಾಙ್ಕ                   {printf("INT");}
+ಪ್ರತ್ಯಾಗಮ                   {printf("RETURN");}
+ಸಹಭಾಜಿತ                     {printf("SHARED");}
+ಅನ್ಯಥಾ                      {printf("ELSE");}
+ಆಹ್ವಾನ                      {printf("CALL");}
+ಪದಾವಲೀ                      {printf("STRING");}
+ಅಸ್ತು                       {printf("LET");}
+ಧ್ರುವ                       {printf("CONST");}
+ಪ್ರತಿ                       {printf("FOR");}
+ಯಾವತ್                       {printf("WHILE");}
+ಸ್ಥಿರ                       {printf("STATIC");}
+ಅನ್ತ                        {printf("END");}
+ಕುರು                        {printf("DO");}
+ಗಚ್ಛ                        {printf("GOTO");}
+ಯದಿ                         {printf("IF");}
+ಇವ                          {printf("AS");}
+ವಾ                          {printf("OR");}
+ಚ                           {printf("AND");}
+ನ                           {printf("NOT");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

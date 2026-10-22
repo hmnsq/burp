@@ -1,0 +1,30 @@
+%{
+/* syriac h2b.uhin: generated from the syriac lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+مشترك                       {printf("SHARED");}
+ܐܚܪܢܐ                       {printf("ELSE");}
+اذهب                        {printf("GOTO");}
+ثابت                        {printf("CONST");}
+ساكن                        {printf("STATIC");}
+صحيح                        {printf("INT");}
+ليكن                        {printf("LET");}
+مؤقت                        {printf("TIMER");}
+نادي                        {printf("CALL");}
+لكل                         {printf("FOR");}
+ܟܡܐ                         {printf("WHILE");}
+ܥܒܕ                         {printf("DO");}
+ܦܢܐ                         {printf("RETURN");}
+ܫܠܡ                         {printf("END");}
+كـ                          {printf("AS");}
+نص                          {printf("STRING");}
+ܐܘ                          {printf("OR");}
+ܐܢ                          {printf("IF");}
+ܠܐ                          {printf("NOT");}
+ܘ                           {printf("AND");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

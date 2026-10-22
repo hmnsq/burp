@@ -1,0 +1,40 @@
+%{
+/* malayalam b2h.uhin: generated from the malayalam lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("തിരികെ");}
+SHARED                      {printf("സഹഭാജിത");}
+STATIC                      {printf("സ്ഥിതം");}
+STRING                      {printf("വാക്യം");}
+return                      {printf("തിരികെ");}
+CONST                       {printf("സ്ഥിരം");}
+TIMER                       {printf("കാലയന്ത്ര");}
+WHILE                       {printf("ആകുമ്പോൾ");}
+while                       {printf("ആകുമ്പോൾ");}
+CALL                        {printf("വിളിക്കുക");}
+ELSE                        {printf("അല്ലെങ്കിൽ");}
+GOTO                        {printf("പോകുക");}
+goto                        {printf("പോകുക");}
+AND                         {printf("ഒപ്പം");}
+END                         {printf("അവസാനം");}
+FOR                         {printf("വേണ്ടി");}
+INT                         {printf("പൂർണ്ണസംഖ്യ");}
+LET                         {printf("ആകട്ടെ");}
+NOT                         {printf("അല്ല");}
+and                         {printf("ഒപ്പം");}
+end                         {printf("അവസാനം");}
+for                         {printf("വേണ്ടി");}
+let                         {printf("ആകട്ടെ");}
+not                         {printf("അല്ല");}
+AS                          {printf("ഇവ");}
+DO                          {printf("ചെയ്യുക");}
+IF                          {printf("എങ്കിൽ");}
+OR                          {printf("അഥവാ");}
+if                          {printf("എങ്കിൽ");}
+or                          {printf("അഥവാ");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

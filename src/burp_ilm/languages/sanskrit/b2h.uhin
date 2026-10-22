@@ -1,0 +1,53 @@
+%{
+/* sanskrit b2h.uhin: generated from the sanskrit lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+OUTPUT                      {printf("निर्गमः_");}
+RETURN                      {printf("प्रत्यागम");}
+SHARED                      {printf("सहभाजित");}
+STATIC                      {printf("स्थिर");}
+STRING                      {printf("पदावली");}
+return                      {printf("प्रत्यागम");}
+CONST                       {printf("ध्रुव");}
+INPUT                       {printf("निवेशः");}
+TIMER                       {printf("कालयन्त्र");}
+WHILE                       {printf("यावत्");}
+gosub                       {printf("उपकार्यं_गच्छ");}
+input                       {printf("निवेशय");}
+print                       {printf("मुद्रय");}
+while                       {printf("यावत्");}
+CALL                        {printf("आह्वान");}
+ELSE                        {printf("अन्यथा");}
+GOTO                        {printf("गच्छ");}
+goto                        {printf("गच्छ");}
+next                        {printf("अग्रिम");}
+step                        {printf("पदम्");}
+then                        {printf("तर्हि");}
+wend                        {printf("यावत्_अन्तः");}
+AND                         {printf("च");}
+END                         {printf("अन्त");}
+FOR                         {printf("प्रति");}
+INT                         {printf("पूर्णाङ्क");}
+LET                         {printf("अस्तु");}
+NOT                         {printf("न");}
+and                         {printf("च");}
+dim                         {printf("आयाम");}
+end                         {printf("अन्त");}
+for                         {printf("प्रति");}
+let                         {printf("अस्तु");}
+mod                         {printf("शेषः");}
+not                         {printf("न");}
+rem                         {printf("टिप्पणी");}
+AS                          {printf("इव");}
+DO                          {printf("कुरु");}
+IF                          {printf("यदि");}
+OR                          {printf("वा");}
+if                          {printf("यदि");}
+or                          {printf("वा");}
+to                          {printf("पर्यन्तम्");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

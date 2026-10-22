@@ -1,0 +1,31 @@
+%{
+/* nepali h2b.uhin: generated from the nepali lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+कालयन्त्र                   {printf("TIMER");}
+खातापूर्ण                   {printf("EOF");}
+पूर्णाङ्क                   {printf("INT");}
+सहभाजित                     {printf("SHARED");}
+अन्त्य                      {printf("END");}
+अन्यथा                      {printf("ELSE");}
+आह्वान                      {printf("CALL");}
+जबसम्म                      {printf("WHILE");}
+पदावली                      {printf("STRING");}
+फर्काऊ                      {printf("RETURN");}
+अस्तु                       {printf("LET");}
+स्थिर                       {printf("STATIC");}
+गच्छ                        {printf("GOTO");}
+लागि                        {printf("FOR");}
+होइन                        {printf("NOT");}
+अचर                         {printf("CONST");}
+यदि                         {printf("IF");}
+इव                          {printf("AS");}
+गर                          {printf("DO");}
+वा                          {printf("OR");}
+र                           {printf("AND");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

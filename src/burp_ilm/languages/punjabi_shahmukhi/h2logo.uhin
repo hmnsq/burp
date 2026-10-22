@@ -1,0 +1,25 @@
+%{
+/* punjabi_shahmukhi h2logo.uhin: generated from the punjabi_shahmukhi lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+جے_نئیں_تے                  {printf("ifelse");}
+قلم_رکھو                    {printf("pendown");}
+پردہ_صاف                    {printf("clearscreen");}
+قلم_چکو                     {printf("penup");}
+أمامي                       {printf("forward");}
+دہراؤ                       {printf("repeat");}
+چھاپو                       {printf("print");}
+انته                        {printf("end");}
+بناؤ                        {printf("make");}
+پچھے                        {printf("back");}
+کھبے                        {printf("left");}
+إذا                         {printf("if");}
+سجے                         {printf("right");}
+گھر                         {printf("home");}
+تک                          {printf("to");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

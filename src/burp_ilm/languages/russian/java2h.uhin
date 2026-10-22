@@ -1,0 +1,19 @@
+%{
+/* russian java2h.uhin: generated from the russian lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+return                      {printf("вернуть");}
+\#else                      {printf("#иначе");}
+while                       {printf("пока");}
+else                        {printf("иначе");}
+main                        {printf("основной");}
+\#if                        {printf("#если");}
+for                         {printf("для");}
+int                         {printf("целое");}
+if                          {printf("если");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

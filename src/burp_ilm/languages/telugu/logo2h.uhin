@@ -1,0 +1,25 @@
+%{
+/* telugu logo2h.uhin: generated from the telugu lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+clearscreen                 {printf("తెర_శుభ్రం");}
+forward                     {printf("అగ్రప్రసార");}
+pendown                     {printf("కలం_దించు");}
+ifelse                      {printf("అయితే_లేకపోతే");}
+repeat                      {printf("పునరావృతం");}
+penup                       {printf("కలం_ఎత్తు");}
+print                       {printf("ముద్రించు");}
+right                       {printf("కుడి");}
+back                        {printf("వెనుకకు");}
+home                        {printf("ఇల్లు");}
+left                        {printf("ఎడమ");}
+make                        {printf("చేయి");}
+end                         {printf("ముగింపు");}
+if                          {printf("ఒకవేళ");}
+to                          {printf("వరకు");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

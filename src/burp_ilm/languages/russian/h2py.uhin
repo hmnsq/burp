@@ -1,0 +1,17 @@
+%{
+/* russian h2py.uhin: generated from the russian lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+основной                    {printf("main");}
+вернуть                     {printf("return");}
+иначе                       {printf("else");}
+целое                       {printf("int");}
+если                        {printf("if");}
+пока                        {printf("while");}
+для                         {printf("for");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

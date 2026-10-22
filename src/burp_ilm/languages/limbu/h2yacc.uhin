@@ -1,0 +1,30 @@
+%{
+/* limbu h2yacc.uhin: generated from the limbu lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+puur_naa_nka                {printf("int");}
+sa_nracanaa                 {printf("struct");}
+anta_hstha                  {printf("inline");}
+parimaa_na                  {printf("sizeof");}
+dviguu_na                   {printf("double");}
+pa_njikaa                   {printf("register");}
+sa_nkeeta                   {printf("signal");}
+ca_ncala                    {printf("volatile");}
+ga_nanaa                    {printf("enum");}
+rak_sita                    {printf("protected");}
+bha_nga                     {printf("break");}
+sa_ngha                     {printf("union");}
+\#ᤀᤡ᤺ᤆᤡ                     {printf("#else");}
+pak_sa                      {printf("case");}
+var_na                      {printf("char");}
+ᤀᤡ᤺ᤆᤡ                       {printf("else");}
+\#ᤀᤡ᤺                       {printf("#if");}
+ᤀᤠ᤺                         {printf("while");}
+ᤀᤡᤴ                         {printf("return");}
+ᤀᤡ᤺                         {printf("if");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

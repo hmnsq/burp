@@ -1,0 +1,54 @@
+%{
+/* malayalam c2h.uhin: generated from the malayalam lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+protected                   {printf("സംരക്ഷിത");}
+\#include                   {printf("#അന്തര്ഭാവ");}
+continue                    {printf("തുടരുക");}
+register                    {printf("രജിസ്റ്റർ");}
+volatile                    {printf("അസ്ഥിര");}
+default                     {printf("സ്ഥിരസ്ഥിതി");}
+private                     {printf("സ്വകാര്യ");}
+typedef                     {printf("തരനിർവചനം");}
+virtual                     {printf("മായാ");}
+assert                      {printf("പ്രതിജ്ഞാ");}
+double                      {printf("ഇരട്ട");}
+extern                      {printf("ബാഹ്യ");}
+inline                      {printf("വരിയിൽ");}
+public                      {printf("പൊതു");}
+return                      {printf("തിരികെ");}
+signal                      {printf("സൂചന");}
+sizeof                      {printf("വലുപ്പം");}
+static                      {printf("സ്ഥിതം");}
+struct                      {printf("ഘടന");}
+switch                      {printf("തിരഞ്ഞെടുപ്പ്");}
+\#elif                      {printf("#അല്ലെങ്കിലെങ്കിൽ");}
+\#else                      {printf("#അല്ലെങ്കിൽ");}
+break                       {printf("നിർത്തുക");}
+const                       {printf("സ്ഥിരം");}
+float                       {printf("ദശാംശം");}
+raise                       {printf("ഉയർത്തുക");}
+union                       {printf("സംഘം");}
+while                       {printf("ആകുമ്പോൾ");}
+write                       {printf("ലിഖ");}
+NULL                        {printf("ശൂന്യ");}
+case                        {printf("അവസ്ഥ");}
+char                        {printf("അക്ഷരം");}
+else                        {printf("അല്ലെങ്കിൽ");}
+enum                        {printf("എണ്ണൽ");}
+free                        {printf("സ്വതന്ത്രം");}
+goto                        {printf("പോകുക");}
+main                        {printf("പ്രധാന");}
+read                        {printf("പഠ");}
+void                        {printf("ശൂന്യം");}
+\#if                        {printf("#എങ്കിൽ");}
+for                         {printf("വേണ്ടി");}
+int                         {printf("പൂർണ്ണസംഖ്യ");}
+do                          {printf("ചെയ്യുക");}
+if                          {printf("എങ്കിൽ");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

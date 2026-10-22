@@ -1,0 +1,13 @@
+%{
+/* arabic logo2h.uhin: generated from the arabic lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+forward                     {printf("أمامي");}
+end                         {printf("انته");}
+if                          {printf("إذا");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

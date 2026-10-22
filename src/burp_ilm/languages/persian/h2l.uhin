@@ -1,0 +1,54 @@
+%{
+/* persian h2l.uhin: generated from the persian lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+\#وگرنهاگر                  {printf("#elif");}
+محافظتشده                   {printf("protected");}
+انجامبده                    {printf("do");}
+تعریفنوع                    {printf("typedef");}
+بالاببر                     {printf("raise");}
+درونخطی                     {printf("inline");}
+\#وگرنه                     {printf("#else");}
+اجتماع                      {printf("union");}
+اعشاری                      {printf("float");}
+انتخاب                      {printf("switch");}
+اندازه                      {printf("sizeof");}
+بازگشت                      {printf("return");}
+بیرونی                      {printf("extern");}
+دوگانه                      {printf("double");}
+ساختار                      {printf("struct");}
+سیگنال                      {printf("signal");}
+پیشفرض                      {printf("default");}
+\#شامل                      {printf("#include");}
+ادامه                       {printf("continue");}
+ایستا                       {printf("static");}
+خصوصی                       {printf("private");}
+شمارش                       {printf("enum");}
+عمومی                       {printf("public");}
+مجازی                       {printf("virtual");}
+نویسه                       {printf("char");}
+وگرنه                       {printf("else");}
+\#اگر                       {printf("#if");}
+آزاد                        {printf("free");}
+اصلی                        {printf("main");}
+اقرأ                        {printf("read");}
+اكتب                        {printf("write");}
+برای                        {printf("for");}
+بشکن                        {printf("break");}
+ثابت                        {printf("const");}
+ثبات                        {printf("register");}
+حالت                        {printf("case");}
+صحیح                        {printf("int");}
+فرار                        {printf("volatile");}
+وقتی                        {printf("while");}
+أكد                         {printf("assert");}
+اگر                         {printf("if");}
+برو                         {printf("goto");}
+تهی                         {printf("void");}
+پوچ                         {printf("NULL");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

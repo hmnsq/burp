@@ -1,0 +1,30 @@
+%{
+/* tamil h2asm.uhin: generated from the tamil lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+இல்லையெனில்                 {printf("ELSE");}
+அத்யவஸ்யதி                  {printf("ASSUME");}
+அந்தர்பாவ                   {printf("INCLUDE");}
+நடைமுறை                     {printf("PROC");}
+மற்றும்                     {printf("AND");}
+வைஶ்விக                     {printf("global");}
+அல்லது                      {printf("OR");}
+சுட்டி                      {printf("PTR");}
+பூட்டு                      {printf("LOCK");}
+இல்லை                       {printf("NOT");}
+எனில்                       {printf("IF");}
+பொது                        {printf("PUBLIC");}
+போது                        {printf("WHILE");}
+முடி                        {printf("END");}
+முழு                        {printf("INT");}
+வெளி                        {printf("EXTERN");}
+அழை                         {printf("CALL");}
+இது                         {printf("THIS");}
+உள்                         {printf("IN");}
+வகை                         {printf("TYPE");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

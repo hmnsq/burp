@@ -1,0 +1,41 @@
+%{
+/* marathi b2h.uhin: generated from the marathi lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("परत");}
+SHARED                      {printf("सहभाजित");}
+STATIC                      {printf("स्थिर");}
+STRING                      {printf("अक्षरमाला");}
+return                      {printf("परत");}
+CONST                       {printf("स्थिरांक");}
+TIMER                       {printf("कालयन्त्र");}
+WHILE                       {printf("पर्यंत");}
+while                       {printf("पर्यंत");}
+CALL                        {printf("बोलवा");}
+ELSE                        {printf("अन्यथा");}
+GOTO                        {printf("जा");}
+goto                        {printf("जा");}
+AND                         {printf("आणि");}
+END                         {printf("शेवट");}
+EOF                         {printf("खातापूर्ण");}
+FOR                         {printf("साठी");}
+INT                         {printf("पूर्णांक");}
+LET                         {printf("समजा");}
+NOT                         {printf("नाही");}
+and                         {printf("आणि");}
+end                         {printf("शेवट");}
+for                         {printf("साठी");}
+let                         {printf("समजा");}
+not                         {printf("नाही");}
+AS                          {printf("इव");}
+DO                          {printf("करा");}
+IF                          {printf("जर");}
+OR                          {printf("किंवा");}
+if                          {printf("जर");}
+or                          {printf("किंवा");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

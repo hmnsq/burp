@@ -1,0 +1,24 @@
+%{
+/* sinhala b2h.uhin: generated from the sinhala lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("ආපසු");}
+return                      {printf("ආපසු");}
+WHILE                       {printf("අතරතුර");}
+while                       {printf("අතරතුර");}
+ELSE                        {printf("නැතහොත්");}
+AND                         {printf("ca");}
+FOR                         {printf("සඳහා");}
+INT                         {printf("පූර්ණ_සංඛ්‍යා");}
+NOT                         {printf("na");}
+and                         {printf("ca");}
+for                         {printf("සඳහා");}
+not                         {printf("na");}
+IF                          {printf("නම්");}
+if                          {printf("නම්");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

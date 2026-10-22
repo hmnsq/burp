@@ -1,0 +1,25 @@
+%{
+/* urdu logo2h.uhin: generated from the urdu lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+clearscreen                 {printf("سکرین_صاف");}
+forward                     {printf("أمامي");}
+pendown                     {printf("قلم_رکھو");}
+ifelse                      {printf("اگر_ورنہ");}
+repeat                      {printf("دہراؤ");}
+penup                       {printf("قلم_اٹھاؤ");}
+print                       {printf("چھاپو");}
+right                       {printf("دائیں");}
+back                        {printf("پیچھے");}
+home                        {printf("گھر");}
+left                        {printf("بائیں");}
+make                        {printf("بناؤ");}
+end                         {printf("اختتام");}
+if                          {printf("اگر");}
+to                          {printf("تک");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

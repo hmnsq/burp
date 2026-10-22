@@ -1,0 +1,54 @@
+%{
+/* pali h2c.uhin: generated from the pali lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+प्रकारनिर्देश               {printf("typedef");}
+\#अन्तर्भाव                 {printf("#include");}
+\#नोचेद्यदि                 {printf("#elif");}
+पटिनिवत्त                   {printf("return");}
+पूर्णाङ्क                   {printf("int");}
+प्रतिज्ञा                   {printf("assert");}
+सार्वजनिक                   {printf("public");}
+अन्तःस्थ                    {printf("inline");}
+\#अञ्ञथा                    {printf("#else");}
+अनुवर्त                     {printf("continue");}
+उत्थापय                     {printf("raise");}
+द्विगुण                     {printf("double");}
+पञ्जिका                     {printf("register");}
+अञ्ञथा                      {printf("else");}
+अत्थाय                      {printf("for");}
+परिमाण                      {printf("sizeof");}
+रक्षित                      {printf("protected");}
+विकल्प                      {printf("switch");}
+संरचना                      {printf("struct");}
+सङ्केत                      {printf("signal");}
+स्वभाव                      {printf("default");}
+करोहि                       {printf("do");}
+गुप्त                       {printf("private");}
+चञ्चल                       {printf("volatile");}
+ध्रुव                       {printf("const");}
+बाह्य                       {printf("extern");}
+भिन्न                       {printf("float");}
+मुक्त                       {printf("free");}
+रिक्त                       {printf("NULL");}
+शून्य                       {printf("void");}
+स्थिर                       {printf("static");}
+\#सचे                       {printf("#if");}
+आभास                        {printf("virtual");}
+गच्छ                        {printf("goto");}
+गणना                        {printf("enum");}
+पक्ष                        {printf("case");}
+पधान                        {printf("main");}
+भङ्ग                        {printf("break");}
+वर्ण                        {printf("char");}
+सङ्घ                        {printf("union");}
+याव                         {printf("while");}
+लिख                         {printf("write");}
+सचे                         {printf("if");}
+पठ                          {printf("read");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

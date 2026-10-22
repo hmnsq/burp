@@ -1,0 +1,40 @@
+%{
+/* bengali b2h.uhin: generated from the bengali lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("ফেরত");}
+SHARED                      {printf("সহভাজিত");}
+STATIC                      {printf("স্থির");}
+STRING                      {printf("বাক্য");}
+return                      {printf("ফেরত");}
+CONST                       {printf("ধ্রুবক");}
+TIMER                       {printf("কালযন্ত্র");}
+WHILE                       {printf("যখন");}
+while                       {printf("যখন");}
+CALL                        {printf("ডাকো");}
+ELSE                        {printf("অন্যথা");}
+GOTO                        {printf("যাও");}
+goto                        {printf("যাও");}
+AND                         {printf("এবং");}
+END                         {printf("শেষ");}
+FOR                         {printf("জন্য");}
+INT                         {printf("পূর্ণসংখ্যা");}
+LET                         {printf("ধরি");}
+NOT                         {printf("নয়");}
+and                         {printf("এবং");}
+end                         {printf("শেষ");}
+for                         {printf("জন্য");}
+let                         {printf("ধরি");}
+not                         {printf("নয়");}
+AS                          {printf("ইব");}
+DO                          {printf("করো");}
+IF                          {printf("যদি");}
+OR                          {printf("অথবা");}
+if                          {printf("যদি");}
+or                          {printf("অথবা");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

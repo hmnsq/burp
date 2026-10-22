@@ -1,0 +1,31 @@
+%{
+/* punjabi asm2h.uhin: generated from the punjabi lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+INCLUDE                     {printf("ਅਨ੍ਤਰ੍ਭਾਵ");}
+ASSUME                      {printf("ਅਧ੍ਯਵਸ੍ਯਤਿ");}
+EXTERN                      {printf("ਬਾਹਰੀ");}
+PUBLIC                      {printf("ਜਨਤਕ");}
+global                      {printf("ਵੈਸ਼੍ਵਿਕ");}
+WHILE                       {printf("ਜਦੋਂ");}
+CALL                        {printf("ਬੁਲਾਓ");}
+ELSE                        {printf("ਨਹੀਂਤਾਂ");}
+LOCK                        {printf("ਜਿੰਦਰਾ");}
+PROC                        {printf("ਵਿਧੀ");}
+THIS                        {printf("ਇਹ");}
+TYPE                        {printf("ਕਿਸਮ");}
+call                        {printf("ਬੁਲਾਓ");}
+AND                         {printf("ਅਤੇ");}
+END                         {printf("ਅੰਤ");}
+INT                         {printf("ਪੂਰਨ");}
+NOT                         {printf("ਨਹੀਂ");}
+PTR                         {printf("ਸੰਕੇਤਕ");}
+IF                          {printf("ਜੇ");}
+IN                          {printf("ਵਿੱਚ");}
+OR                          {printf("ਜਾਂ");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

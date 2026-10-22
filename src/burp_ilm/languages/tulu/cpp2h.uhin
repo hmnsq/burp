@@ -1,0 +1,67 @@
+%{
+/* tulu cpp2h.uhin: generated from the tulu lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+namespace                   {printf("ನಾಮಾಕಾಶ");}
+protected                   {printf("ರಕ್ಷಿತ");}
+\#include                   {printf("#ಅನ್ತರ್ಭಾವ");}
+continue                    {printf("ಅನುವರ್ತ");}
+register                    {printf("ಪಞ್ಜಿಕಾ");}
+volatile                    {printf("ಚಞ್ಚಲ");}
+default                     {printf("ಸ್ವಭಾವ");}
+private                     {printf("ಗುಪ್ತ");}
+typedef                     {printf("ಪ್ರಕಾರನಿರ್ದೇಶ");}
+virtual                     {printf("ಆಭಾಸ");}
+assert                      {printf("ಪ್ರತಿಜ್ಞಾ");}
+double                      {printf("ದ್ವಿಗುಣ");}
+extern                      {printf("ಬಾಹ್ಯ");}
+inline                      {printf("ಅನ್ತಃಸ್ಥ");}
+public                      {printf("ಸಾರ್ವಜನಿಕ");}
+return                      {printf("ಪ್ರತ್ಯಾಗಮ");}
+signal                      {printf("ಸಙ್ಕೇತ");}
+sizeof                      {printf("ಪರಿಮಾಣ");}
+static                      {printf("ಸ್ಥಿರ");}
+struct                      {printf("ಸಂರಚನಾ");}
+switch                      {printf("ವಿಕಲ್ಪ");}
+\#elif                      {printf("#ನೋಚೇದ್ಯದಿ");}
+\#else                      {printf("#ಅನ್ಯಥಾ");}
+break                       {printf("ಭಙ್ಗ");}
+catch                       {printf("ಗೃಹಾಣ");}
+class                       {printf("ವರ್ಗ");}
+const                       {printf("ಧ್ರುವ");}
+false                       {printf("ಅಸತ್ಯ");}
+float                       {printf("ಭಿನ್ನ");}
+raise                       {printf("ಉತ್ಥಾಪಯ");}
+sleep                       {printf("ಸುಷುಪ್ತಿ");}
+throw                       {printf("ಕ್ಷಿಪ");}
+union                       {printf("ಸಙ್ಘ");}
+while                       {printf("ಯಾವತ್");}
+write                       {printf("ಲಿಖ");}
+NULL                        {printf("ರಿಕ್ತ");}
+bool                        {printf("ತಾರ್ಕಿಕ");}
+case                        {printf("ಪಕ್ಷ");}
+char                        {printf("ವರ್ಣ");}
+else                        {printf("ಅನ್ಯಥಾ");}
+enum                        {printf("ಗಣನಾ");}
+free                        {printf("ಮುಕ್ತ");}
+goto                        {printf("ಗಚ್ಛ");}
+main                        {printf("ಮುಖ್ಯ");}
+pipe                        {printf("ಪ್ರಣಾಲ");}
+read                        {printf("ಪಠ");}
+sync                        {printf("ಸಮಕಾಲ");}
+this                        {printf("ಏತತ್");}
+true                        {printf("ಸತ್ಯ");}
+void                        {printf("ಶೂನ್ಯ");}
+\#if                        {printf("#ಯದಿ");}
+for                         {printf("ಪ್ರತಿ");}
+int                         {printf("ಪೂರ್ಣಾಙ್ಕ");}
+new                         {printf("ನೂತನ");}
+try                         {printf("ಯತ್ನ");}
+do                          {printf("ಕುರು");}
+if                          {printf("ಯದಿ");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

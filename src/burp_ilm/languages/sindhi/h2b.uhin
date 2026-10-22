@@ -1,0 +1,41 @@
+%{
+/* sindhi h2b.uhin: generated from the sindhi lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+جيستائين_پورو               {printf("wend");}
+ايندڙ_ڦيرو                  {printf("next");}
+ذيلي_وڃو                    {printf("gosub");}
+قدم_سان                     {printf("step");}
+تائين                       {printf("to");}
+تبصرو                       {printf("rem");}
+طالما                       {printf("WHILE");}
+مشترك                       {printf("SHARED");}
+ڇاپيو                       {printf("print");}
+أرجع                        {printf("RETURN");}
+اذهب                        {printf("GOTO");}
+افعل                        {printf("DO");}
+انته                        {printf("END");}
+باقي                        {printf("mod");}
+ثابت                        {printf("CONST");}
+ساكن                        {printf("STATIC");}
+صحيح                        {printf("INT");}
+ليكن                        {printf("LET");}
+مؤقت                        {printf("TIMER");}
+نادي                        {printf("CALL");}
+وإلا                        {printf("ELSE");}
+إذا                         {printf("IF");}
+لكل                         {printf("FOR");}
+ليس                         {printf("NOT");}
+ماپ                         {printf("dim");}
+وٺو                         {printf("input");}
+أو                          {printf("OR");}
+ته                          {printf("then");}
+كـ                          {printf("AS");}
+نص                          {printf("STRING");}
+و                           {printf("AND");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

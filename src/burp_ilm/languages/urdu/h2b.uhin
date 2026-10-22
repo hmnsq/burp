@@ -1,0 +1,41 @@
+%{
+/* urdu h2b.uhin: generated from the urdu lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+جب_تک_ختم                   {printf("wend");}
+اگلا_چکر                    {printf("next");}
+حاصل_کرو                    {printf("input");}
+ذیلی_جاؤ                    {printf("gosub");}
+اختتام                      {printf("END");}
+قدم_سے                      {printf("step");}
+ابعاد                       {printf("dim");}
+برائے                       {printf("FOR");}
+تبصرہ                       {printf("rem");}
+مشترك                       {printf("SHARED");}
+چھاپو                       {printf("print");}
+باقی                        {printf("mod");}
+بطور                        {printf("AS");}
+بلاؤ                        {printf("CALL");}
+ثابت                        {printf("CONST");}
+جملہ                        {printf("STRING");}
+ساکن                        {printf("STATIC");}
+صحیح                        {printf("INT");}
+مؤقت                        {printf("TIMER");}
+مانو                        {printf("LET");}
+نہیں                        {printf("NOT");}
+واپس                        {printf("RETURN");}
+ورنہ                        {printf("ELSE");}
+اور                         {printf("AND");}
+اگر                         {printf("IF");}
+جاؤ                         {printf("GOTO");}
+کرو                         {printf("DO");}
+تو                          {printf("then");}
+تک                          {printf("to");}
+جب                          {printf("WHILE");}
+یا                          {printf("OR");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

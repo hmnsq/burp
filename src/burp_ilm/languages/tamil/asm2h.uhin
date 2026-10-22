@@ -1,0 +1,31 @@
+%{
+/* tamil asm2h.uhin: generated from the tamil lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+INCLUDE                     {printf("அந்தர்பாவ");}
+ASSUME                      {printf("அத்யவஸ்யதி");}
+EXTERN                      {printf("வெளி");}
+PUBLIC                      {printf("பொது");}
+global                      {printf("வைஶ்விக");}
+WHILE                       {printf("போது");}
+CALL                        {printf("அழை");}
+ELSE                        {printf("இல்லையெனில்");}
+LOCK                        {printf("பூட்டு");}
+PROC                        {printf("நடைமுறை");}
+THIS                        {printf("இது");}
+TYPE                        {printf("வகை");}
+call                        {printf("அழை");}
+AND                         {printf("மற்றும்");}
+END                         {printf("முடி");}
+INT                         {printf("முழு");}
+NOT                         {printf("இல்லை");}
+PTR                         {printf("சுட்டி");}
+IF                          {printf("எனில்");}
+IN                          {printf("உள்");}
+OR                          {printf("அல்லது");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

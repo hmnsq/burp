@@ -1,0 +1,40 @@
+%{
+/* gujarati b2h.uhin: generated from the gujarati lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("પાછા");}
+SHARED                      {printf("સહભાજિત");}
+STATIC                      {printf("સ્થિર");}
+STRING                      {printf("શબ્દમાળા");}
+return                      {printf("પાછા");}
+CONST                       {printf("અચલ");}
+TIMER                       {printf("કાલયન્ત્ર");}
+WHILE                       {printf("જ્યારે");}
+while                       {printf("જ્યારે");}
+CALL                        {printf("બોલાવો");}
+ELSE                        {printf("નહીંતર");}
+GOTO                        {printf("જાઓ");}
+goto                        {printf("જાઓ");}
+AND                         {printf("અને");}
+END                         {printf("અંત");}
+FOR                         {printf("માટે");}
+INT                         {printf("પૂર્ણાંક");}
+LET                         {printf("ધારો");}
+NOT                         {printf("નહીં");}
+and                         {printf("અને");}
+end                         {printf("અંત");}
+for                         {printf("માટે");}
+let                         {printf("ધારો");}
+not                         {printf("નહીં");}
+AS                          {printf("ઇવ");}
+DO                          {printf("કરો");}
+IF                          {printf("જો");}
+OR                          {printf("અથવા");}
+if                          {printf("જો");}
+or                          {printf("અથવા");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

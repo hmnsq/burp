@@ -1,0 +1,25 @@
+%{
+/* punjabi h2logo.uhin: generated from the punjabi lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+ਅਗ੍ਰਪ੍ਰਸਾਰ                  {printf("forward");}
+ਜੇ_ਨਹੀਂਤਾਂ                  {printf("ifelse");}
+ਕਲਮ_ਚੁੱਕੋ                   {printf("penup");}
+ਕਲਮ_ਰੱਖੋ                    {printf("pendown");}
+ਪਰਦਾ_ਸਾਫ                    {printf("clearscreen");}
+ਦੁਹਰਾਓ                      {printf("repeat");}
+ਪਿੱਛੇ                       {printf("back");}
+ਖੱਬੇ                        {printf("left");}
+ਛਾਪੋ                        {printf("print");}
+ਬਣਾਓ                        {printf("make");}
+ਸੱਜੇ                        {printf("right");}
+ਅੰਤ                         {printf("end");}
+ਤੱਕ                         {printf("to");}
+ਘਰ                          {printf("home");}
+ਜੇ                          {printf("if");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

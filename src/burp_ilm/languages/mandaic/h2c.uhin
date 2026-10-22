@@ -1,0 +1,53 @@
+%{
+/* mandaic h2c.uhin: generated from the mandaic lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+\#وإلاإذا                   {printf("#elif");}
+تعريفنوع                    {printf("typedef");}
+افتراضي                     {printf("default");}
+متطاير                      {printf("volatile");}
+\#وإلا                      {printf("#else");}
+إشارة                       {printf("signal");}
+اتحاد                       {printf("union");}
+استمر                       {printf("continue");}
+تعداد                       {printf("enum");}
+خارجي                       {printf("extern");}
+رئيسي                       {printf("main");}
+طالما                       {printf("while");}
+مزدوج                       {printf("double");}
+\#إذا                       {printf("#if");}
+\#ضمن                       {printf("#include");}
+أرجع                        {printf("return");}
+اذهب                        {printf("goto");}
+ارفع                        {printf("raise");}
+افعل                        {printf("do");}
+اقرأ                        {printf("read");}
+اكتب                        {printf("write");}
+اكسر                        {printf("break");}
+بنية                        {printf("struct");}
+ثابت                        {printf("const");}
+حالة                        {printf("case");}
+ساكن                        {printf("static");}
+صحيح                        {printf("int");}
+عائم                        {printf("float");}
+فراغ                        {printf("void");}
+محمي                        {printf("protected");}
+مضمن                        {printf("inline");}
+وإلا                        {printf("else");}
+أكد                         {printf("assert");}
+إذا                         {printf("if");}
+بدل                         {printf("switch");}
+حجم                         {printf("sizeof");}
+حرر                         {printf("free");}
+حرف                         {printf("char");}
+خاص                         {printf("private");}
+سجل                         {printf("register");}
+عام                         {printf("public");}
+عدم                         {printf("NULL");}
+لكل                         {printf("for");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

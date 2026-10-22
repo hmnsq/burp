@@ -1,0 +1,31 @@
+%{
+/* telugu asm2h.uhin: generated from the telugu lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+INCLUDE                     {printf("అన్తర్భావ");}
+ASSUME                      {printf("అధ్యవస్యతి");}
+EXTERN                      {printf("బాహ్య");}
+PUBLIC                      {printf("బహిరంగ");}
+global                      {printf("వైశ్విక");}
+WHILE                       {printf("అయితే");}
+CALL                        {printf("పిలువు");}
+ELSE                        {printf("లేకపోతే");}
+LOCK                        {printf("తాళం");}
+PROC                        {printf("విధానం");}
+THIS                        {printf("ఇది");}
+TYPE                        {printf("రకం");}
+call                        {printf("పిలువు");}
+AND                         {printf("మరియు");}
+END                         {printf("ముగింపు");}
+INT                         {printf("పూర్ణాంకం");}
+NOT                         {printf("కాదు");}
+PTR                         {printf("సూచిక");}
+IF                          {printf("ఒకవేళ");}
+IN                          {printf("లో");}
+OR                          {printf("లేదా");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

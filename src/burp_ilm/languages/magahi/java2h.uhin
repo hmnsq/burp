@@ -1,0 +1,75 @@
+%{
+/* magahi java2h.uhin: generated from the magahi lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+implements                  {printf("निष्पादित");}
+interface                   {printf("सन्धि");}
+protected                   {printf("रक्षित");}
+\#include                   {printf("#अन्तर्भाव");}
+abstract                    {printf("अमूर्त");}
+continue                    {printf("अनुवर्त");}
+register                    {printf("पञ्जिका");}
+volatile                    {printf("चञ्चल");}
+default                     {printf("स्वभाव");}
+extends                     {printf("विस्तृत");}
+finally                     {printf("अन्ततः");}
+package                     {printf("पुटक");}
+private                     {printf("गुप्त");}
+typedef                     {printf("प्रकारनिर्देश");}
+virtual                     {printf("आभास");}
+Object                      {printf("वस्तु");}
+String                      {printf("पदावली");}
+Thread                      {printf("तन्तु");}
+assert                      {printf("प्रतिज्ञा");}
+double                      {printf("द्विगुण");}
+extern                      {printf("बाह्य");}
+import                      {printf("आनयन");}
+inline                      {printf("अन्तःस्थ");}
+public                      {printf("सार्वजनिक");}
+return                      {printf("प्रत्यागम");}
+signal                      {printf("सङ्केत");}
+sizeof                      {printf("परिमाण");}
+static                      {printf("स्थिर");}
+struct                      {printf("संरचना");}
+switch                      {printf("विकल्प");}
+\#elif                      {printf("#नोचेद्यदि");}
+\#else                      {printf("#अन्यथा");}
+break                       {printf("भङ्ग");}
+catch                       {printf("गृहाण");}
+class                       {printf("वर्ग");}
+const                       {printf("ध्रुव");}
+false                       {printf("असत्य");}
+float                       {printf("भिन्न");}
+raise                       {printf("उत्थापय");}
+sleep                       {printf("सुषुप्ति");}
+super                       {printf("पर");}
+throw                       {printf("क्षिप");}
+union                       {printf("सङ्घ");}
+while                       {printf("यावत्");}
+write                       {printf("लिख");}
+NULL                        {printf("रिक्त");}
+case                        {printf("पक्ष");}
+char                        {printf("वर्ण");}
+else                        {printf("अन्यथा");}
+enum                        {printf("गणना");}
+free                        {printf("मुक्त");}
+goto                        {printf("गच्छ");}
+main                        {printf("मुख्य");}
+null                        {printf("रिक्त");}
+read                        {printf("पठ");}
+this                        {printf("एतत्");}
+true                        {printf("सत्य");}
+void                        {printf("शून्य");}
+\#if                        {printf("#यदि");}
+for                         {printf("प्रति");}
+int                         {printf("पूर्णाङ्क");}
+new                         {printf("नूतन");}
+try                         {printf("यत्न");}
+do                          {printf("कुरु");}
+if                          {printf("यदि");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

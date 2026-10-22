@@ -1,0 +1,40 @@
+%{
+/* syriac b2h.uhin: generated from the syriac lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("ܦܢܐ");}
+SHARED                      {printf("مشترك");}
+STATIC                      {printf("ساكن");}
+STRING                      {printf("نص");}
+return                      {printf("ܦܢܐ");}
+CONST                       {printf("ثابت");}
+TIMER                       {printf("مؤقت");}
+WHILE                       {printf("ܟܡܐ");}
+while                       {printf("ܟܡܐ");}
+CALL                        {printf("نادي");}
+ELSE                        {printf("ܐܚܪܢܐ");}
+GOTO                        {printf("اذهب");}
+goto                        {printf("اذهب");}
+AND                         {printf("ܘ");}
+END                         {printf("ܫܠܡ");}
+FOR                         {printf("لكل");}
+INT                         {printf("صحيح");}
+LET                         {printf("ليكن");}
+NOT                         {printf("ܠܐ");}
+and                         {printf("ܘ");}
+end                         {printf("ܫܠܡ");}
+for                         {printf("لكل");}
+let                         {printf("ليكن");}
+not                         {printf("ܠܐ");}
+AS                          {printf("كـ");}
+DO                          {printf("ܥܒܕ");}
+IF                          {printf("ܐܢ");}
+OR                          {printf("ܐܘ");}
+if                          {printf("ܐܢ");}
+or                          {printf("ܐܘ");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

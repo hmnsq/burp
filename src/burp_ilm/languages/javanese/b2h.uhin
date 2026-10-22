@@ -1,0 +1,24 @@
+%{
+/* javanese b2h.uhin: generated from the javanese lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("ꦮꦭꦶ");}
+return                      {printf("ꦮꦭꦶ");}
+WHILE                       {printf("ꦱꦼꦢꦼꦭ");}
+while                       {printf("ꦱꦼꦢꦼꦭ");}
+ELSE                        {printf("ꦭꦶꦪ");}
+AND                         {printf("ca");}
+FOR                         {printf("ꦏꦁꦒꦺꦴ");}
+INT                         {printf("puur_naa_nka");}
+NOT                         {printf("na");}
+and                         {printf("ca");}
+for                         {printf("ꦏꦁꦒꦺꦴ");}
+not                         {printf("na");}
+IF                          {printf("ꦪꦼꦤ꧀");}
+if                          {printf("ꦪꦼꦤ꧀");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

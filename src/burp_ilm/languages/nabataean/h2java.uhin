@@ -1,0 +1,72 @@
+%{
+/* nabataean h2java.uhin: generated from the nabataean lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+\#وإلاإذا                   {printf("#elif");}
+تعريفنوع                    {printf("typedef");}
+افتراضي                     {printf("default");}
+استورد                      {printf("import");}
+متطاير                      {printf("volatile");}
+\#وإلا                      {printf("#else");}
+أخيرا                       {printf("finally");}
+إشارة                       {printf("signal");}
+اتحاد                       {printf("union");}
+استمر                       {printf("continue");}
+تعداد                       {printf("enum");}
+خارجي                       {printf("extern");}
+رئيسي                       {printf("main");}
+طالما                       {printf("while");}
+مزدوج                       {printf("double");}
+واجهة                       {printf("interface");}
+\#إذا                       {printf("#if");}
+\#ضمن                       {printf("#include");}
+أرجع                        {printf("return");}
+أعلى                        {printf("super");}
+اذهب                        {printf("goto");}
+ارفع                        {printf("raise");}
+افعل                        {printf("do");}
+اقرأ                        {printf("read");}
+اكتب                        {printf("write");}
+اكسر                        {printf("break");}
+امسك                        {printf("catch");}
+بنية                        {printf("struct");}
+ثابت                        {printf("const");}
+جديد                        {printf("new");}
+حالة                        {printf("case");}
+حاول                        {printf("try");}
+حزمة                        {printf("package");}
+ساكن                        {printf("static");}
+صحيح                        {printf("int");}
+عائم                        {printf("float");}
+فراغ                        {printf("void");}
+كائن                        {printf("Object");}
+مجرد                        {printf("abstract");}
+محمي                        {printf("protected");}
+مضمن                        {printf("inline");}
+وإلا                        {printf("else");}
+يمتد                        {printf("extends");}
+ينفذ                        {printf("implements");}
+أكد                         {printf("assert");}
+إذا                         {printf("if");}
+ارم                         {printf("throw");}
+بدل                         {printf("switch");}
+حجم                         {printf("sizeof");}
+حرر                         {printf("free");}
+حرف                         {printf("char");}
+خاص                         {printf("private");}
+خطأ                         {printf("false");}
+خيط                         {printf("Thread");}
+سجل                         {printf("register");}
+صنف                         {printf("class");}
+عام                         {printf("public");}
+عدم                         {printf("NULL");}
+لكل                         {printf("for");}
+نوم                         {printf("sleep");}
+هذا                         {printf("this");}
+نص                          {printf("String");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

@@ -1,0 +1,31 @@
+%{
+/* bengali asm2h.uhin: generated from the bengali lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+INCLUDE                     {printf("অন্তর্ভাব");}
+ASSUME                      {printf("অধ্যবস্যতি");}
+EXTERN                      {printf("বাহ্যিক");}
+PUBLIC                      {printf("সর্বজনীন");}
+global                      {printf("বৈশ্বিক");}
+WHILE                       {printf("যখন");}
+CALL                        {printf("ডাকো");}
+ELSE                        {printf("অন্যথা");}
+LOCK                        {printf("তালা");}
+PROC                        {printf("প্রক্রিয়া");}
+THIS                        {printf("এই");}
+TYPE                        {printf("প্রকার");}
+call                        {printf("ডাকো");}
+AND                         {printf("এবং");}
+END                         {printf("শেষ");}
+INT                         {printf("পূর্ণসংখ্যা");}
+NOT                         {printf("নয়");}
+PTR                         {printf("নির্দেশক");}
+IF                          {printf("যদি");}
+IN                          {printf("মধ্যে");}
+OR                          {printf("অথবা");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

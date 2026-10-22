@@ -1,0 +1,22 @@
+%{
+/* balinese b2h.uhin: generated from the balinese lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("ᬯᬮᬶ");}
+return                      {printf("ᬯᬮᬶ");}
+WHILE                       {printf("ᬲᭂᬤᭂᬮ");}
+while                       {printf("ᬲᭂᬤᭂᬮ");}
+ELSE                        {printf("ᬮᬶᬬ");}
+AND                         {printf("ca");}
+INT                         {printf("puur_naa_nka");}
+NOT                         {printf("na");}
+and                         {printf("ca");}
+not                         {printf("na");}
+IF                          {printf("ᬬᬾᬦ᭄");}
+if                          {printf("ᬬᬾᬦ᭄");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

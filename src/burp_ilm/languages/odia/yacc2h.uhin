@@ -1,0 +1,55 @@
+%{
+/* odia yacc2h.uhin: generated from the odia lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+protected                   {printf("ସୁରକ୍ଷିତ");}
+\#include                   {printf("#ଅନ୍ତର୍ଭାଵ");}
+continue                    {printf("ଜାରି");}
+register                    {printf("ପଞ୍ଜିକରଣ");}
+volatile                    {printf("ଅସ୍ଥିର");}
+default                     {printf("ପୂର୍ବନିର୍ଦ୍ଧାରିତ");}
+private                     {printf("ବ୍ୟକ୍ତିଗତ");}
+typedef                     {printf("ପ୍ରକାରବ୍ୟାଖ୍ୟା");}
+virtual                     {printf("ଆଭାସୀ");}
+assert                      {printf("ପ୍ରତିଜ୍ଞା");}
+double                      {printf("ଦ୍ୱିଗୁଣ");}
+extern                      {printf("ବାହ୍ୟ");}
+inline                      {printf("ଧାଡ଼ିଭିତରେ");}
+public                      {printf("ସର୍ବସାଧାରଣ");}
+return                      {printf("ଫେରନ୍ତୁ");}
+signal                      {printf("ସଙ୍କେତ");}
+sizeof                      {printf("ଆକାର");}
+static                      {printf("ସ୍ଥିର");}
+struct                      {printf("ସଂରଚନା");}
+switch                      {printf("ବାଛ");}
+\#elif                      {printf("#ନଚେତଯଦି");}
+\#else                      {printf("#ଅନ୍ୟଥା");}
+break                       {printf("ଭାଙ୍ଗ");}
+const                       {printf("ଅଚଳ");}
+float                       {printf("ଦଶମିକ");}
+raise                       {printf("ଉଠାଅ");}
+union                       {printf("ସଂଘ");}
+while                       {printf("ଯେତେବେଳେ");}
+write                       {printf("ଲିଖ");}
+NULL                        {printf("ଖାଲି");}
+case                        {printf("ସ୍ଥିତି");}
+char                        {printf("ଅକ୍ଷର");}
+else                        {printf("ଅନ୍ୟଥା");}
+enum                        {printf("ଗଣନା");}
+free                        {printf("ମୁକ୍ତ");}
+goto                        {printf("ଯାଅ");}
+main                        {printf("ମୁଖ୍ୟ");}
+read                        {printf("ପଠ");}
+type                        {printf("ପ୍ରକାର");}
+void                        {printf("ଶୂନ୍ୟ");}
+\#if                        {printf("#ଯଦି");}
+for                         {printf("ପାଇଁ");}
+int                         {printf("ପୂର୍ଣ୍ଣସଂଖ୍ୟା");}
+do                          {printf("କର");}
+if                          {printf("ଯଦି");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

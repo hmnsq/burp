@@ -1,0 +1,74 @@
+%{
+/* persian h2java.uhin: generated from the persian lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+\#وگرنهاگر                  {printf("#elif");}
+محافظتشده                   {printf("protected");}
+پیادهسازی                   {printf("implements");}
+انجامبده                    {printf("do");}
+تعریفنوع                    {printf("typedef");}
+انتزاعی                     {printf("abstract");}
+بالاببر                     {printf("raise");}
+درونخطی                     {printf("inline");}
+سرانجام                     {printf("finally");}
+پرتابکن                     {printf("throw");}
+\#وگرنه                     {printf("#else");}
+اجتماع                      {printf("union");}
+اعشاری                      {printf("float");}
+انتخاب                      {printf("switch");}
+اندازه                      {printf("sizeof");}
+بازگشت                      {printf("return");}
+بیرونی                      {printf("extern");}
+دوگانه                      {printf("double");}
+ساختار                      {printf("struct");}
+سیگنال                      {printf("signal");}
+نادرست                      {printf("false");}
+واردکن                      {printf("import");}
+پیشفرض                      {printf("default");}
+\#شامل                      {printf("#include");}
+ادامه                       {printf("continue");}
+ایستا                       {printf("static");}
+خصوصی                       {printf("private");}
+شمارش                       {printf("enum");}
+عمومی                       {printf("public");}
+مجازی                       {printf("virtual");}
+نویسه                       {printf("char");}
+وگرنه                       {printf("else");}
+گسترش                       {printf("extends");}
+\#اگر                       {printf("#if");}
+آزاد                        {printf("free");}
+اصلی                        {printf("main");}
+اقرأ                        {printf("read");}
+اكتب                        {printf("write");}
+برای                        {printf("for");}
+بسته                        {printf("package");}
+بشکن                        {printf("break");}
+بگیر                        {printf("catch");}
+تلاش                        {printf("try");}
+ثابت                        {printf("const");}
+ثبات                        {printf("register");}
+جدید                        {printf("new");}
+حالت                        {printf("case");}
+درست                        {printf("true");}
+رشته                        {printf("String");}
+صحیح                        {printf("int");}
+فرار                        {printf("volatile");}
+واسط                        {printf("interface");}
+وقتی                        {printf("while");}
+أكد                         {printf("assert");}
+ابر                         {printf("super");}
+اگر                         {printf("if");}
+این                         {printf("this");}
+برو                         {printf("goto");}
+تهی                         {printf("void");}
+رده                         {printf("class");}
+شیء                         {printf("Object");}
+نوم                         {printf("sleep");}
+پوچ                         {printf("NULL");}
+نخ                          {printf("Thread");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

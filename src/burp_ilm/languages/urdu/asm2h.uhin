@@ -1,0 +1,31 @@
+%{
+/* urdu asm2h.uhin: generated from the urdu lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+INCLUDE                     {printf("شامل");}
+ASSUME                      {printf("افترض");}
+EXTERN                      {printf("خارجی");}
+PUBLIC                      {printf("عوامی");}
+global                      {printf("عام");}
+WHILE                       {printf("جب");}
+CALL                        {printf("بلاؤ");}
+ELSE                        {printf("ورنہ");}
+LOCK                        {printf("تالا");}
+PROC                        {printf("طریقہ");}
+THIS                        {printf("یہ");}
+TYPE                        {printf("قسم");}
+call                        {printf("بلاؤ");}
+AND                         {printf("اور");}
+END                         {printf("اختتام");}
+INT                         {printf("صحیح");}
+NOT                         {printf("نہیں");}
+PTR                         {printf("اشارہ");}
+IF                          {printf("اگر");}
+IN                          {printf("میں");}
+OR                          {printf("یا");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

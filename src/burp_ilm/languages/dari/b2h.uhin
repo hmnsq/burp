@@ -1,0 +1,51 @@
+%{
+/* dari b2h.uhin: generated from the dari lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("أرجع");}
+SHARED                      {printf("مشترك");}
+STATIC                      {printf("ساكن");}
+STRING                      {printf("نص");}
+return                      {printf("أرجع");}
+CONST                       {printf("ثابت");}
+TIMER                       {printf("مؤقت");}
+WHILE                       {printf("طالما");}
+gosub                       {printf("برو_زیربرنامه");}
+input                       {printf("بگیر");}
+print                       {printf("چاپ");}
+while                       {printf("طالما");}
+CALL                        {printf("نادي");}
+ELSE                        {printf("وإلا");}
+GOTO                        {printf("اذهب");}
+goto                        {printf("اذهب");}
+next                        {printf("بعدی_دور");}
+step                        {printf("گام_به");}
+then                        {printf("آنگاه");}
+wend                        {printf("پایان_مادامی");}
+AND                         {printf("و");}
+END                         {printf("انته");}
+FOR                         {printf("لكل");}
+INT                         {printf("صحيح");}
+LET                         {printf("ليكن");}
+NOT                         {printf("ليس");}
+and                         {printf("و");}
+dim                         {printf("ابعاد");}
+end                         {printf("انته");}
+for                         {printf("لكل");}
+let                         {printf("ليكن");}
+mod                         {printf("باقیمانده");}
+not                         {printf("ليس");}
+rem                         {printf("توضیح");}
+AS                          {printf("كـ");}
+DO                          {printf("افعل");}
+IF                          {printf("إذا");}
+OR                          {printf("أو");}
+if                          {printf("إذا");}
+or                          {printf("أو");}
+to                          {printf("تا");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

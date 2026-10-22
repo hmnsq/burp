@@ -1,0 +1,69 @@
+%{
+/* odia py2h.uhin: generated from the odia lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+implements                  {printf("କାର୍ଯ୍ୟକାରୀ");}
+interface                   {printf("ଅନ୍ତରମୁଖ");}
+protected                   {printf("ସୁରକ୍ଷିତ");}
+abstract                    {printf("ଅମୂର୍ତ");}
+continue                    {printf("ଜାରି");}
+volatile                    {printf("ଅସ୍ଥିର");}
+default                     {printf("ପୂର୍ବନିର୍ଦ୍ଧାରିତ");}
+extends                     {printf("ବିସ୍ତାର");}
+finally                     {printf("ଶେଷରେ");}
+package                     {printf("ପ୍ୟାକେଜ");}
+private                     {printf("ବ୍ୟକ୍ତିଗତ");}
+Object                      {printf("ବସ୍ତୁ");}
+String                      {printf("ବାକ୍ୟ");}
+Thread                      {printf("ସୂତା");}
+assert                      {printf("ପ୍ରତିଜ୍ଞା");}
+double                      {printf("ଦ୍ୱିଗୁଣ");}
+except                      {printf("ବ୍ୟତିକ୍ରମ");}
+global                      {printf("ଵୈଶ୍ଵିକ");}
+import                      {printf("ଆମଦାନୀ");}
+lambda                      {printf("ଅନାମ");}
+public                      {printf("ସର୍ବସାଧାରଣ");}
+return                      {printf("ଫେରନ୍ତୁ");}
+static                      {printf("ସ୍ଥିର");}
+switch                      {printf("ବାଛ");}
+False                       {printf("ମିଥ୍ୟା");}
+break                       {printf("ଭାଙ୍ଗ");}
+catch                       {printf("ଧର");}
+class                       {printf("ଶ୍ରେଣୀ");}
+const                       {printf("ଅଚଳ");}
+float                       {printf("ଦଶମିକ");}
+raise                       {printf("ଉଠାଅ");}
+sleep                       {printf("ସୁଷୁପ୍ତି");}
+super                       {printf("ପରମ");}
+throw                       {printf("ଫିଙ୍ଗ");}
+while                       {printf("ଯେତେବେଳେ");}
+write                       {printf("ଲିଖ");}
+yield                       {printf("ଦିଅ");}
+True                        {printf("ସତ୍ୟ");}
+case                        {printf("ସ୍ଥିତି");}
+char                        {printf("ଅକ୍ଷର");}
+elif                        {printf("ନଚେତଯଦି");}
+else                        {printf("ଅନ୍ୟଥା");}
+from                        {printf("ତଃ");}
+goto                        {printf("ଯାଅ");}
+main                        {printf("ମୁଖ୍ୟ");}
+read                        {printf("ପଠ");}
+this                        {printf("ଏହି");}
+void                        {printf("ଶୂନ୍ୟ");}
+and                         {printf("ଏବଂ");}
+for                         {printf("ପାଇଁ");}
+int                         {printf("ପୂର୍ଣ୍ଣସଂଖ୍ୟା");}
+new                         {printf("ନୂତନ");}
+not                         {printf("ନୁହେଁ");}
+try                         {printf("ଚେଷ୍ଟା");}
+as                          {printf("ଇଵ");}
+do                          {printf("କର");}
+if                          {printf("ଯଦି");}
+in                          {printf("ଭିତରେ");}
+or                          {printf("କିମ୍ବା");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

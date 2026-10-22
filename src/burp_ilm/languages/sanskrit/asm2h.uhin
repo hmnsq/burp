@@ -1,0 +1,44 @@
+%{
+/* sanskrit asm2h.uhin: generated from the sanskrit lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+INCLUDE                     {printf("अन्तर्भाव");}
+section                     {printf("खण्डः");}
+ASSUME                      {printf("अध्यवस्यति");}
+EXTERN                      {printf("बाह्य");}
+PUBLIC                      {printf("सार्वजनिक");}
+global                      {printf("वैश्विक");}
+WHILE                       {printf("यावत्");}
+CALL                        {printf("आह्वान");}
+ELSE                        {printf("अन्यथा");}
+HIGH                        {printf("उच्च");}
+LOCK                        {printf("तालक");}
+PROC                        {printf("विधि");}
+THIS                        {printf("एतत्");}
+TYPE                        {printf("प्रकार");}
+call                        {printf("आह्वान");}
+push                        {printf("निक्षिप");}
+AND                         {printf("च");}
+END                         {printf("अन्त");}
+INT                         {printf("पूर्णाङ्क");}
+LOW                         {printf("निम्न");}
+NOT                         {printf("न");}
+PTR                         {printf("निर्देशक");}
+add                         {printf("योजय");}
+cmp                         {printf("तुलय");}
+div                         {printf("भाजय");}
+jmp                         {printf("कूर्द");}
+mov                         {printf("चालय");}
+mul                         {printf("गुणय");}
+pop                         {printf("उद्धर");}
+ret                         {printf("प्रत्यागच्छ");}
+sub                         {printf("वियोजय");}
+IF                          {printf("यदि");}
+IN                          {printf("अन्तः");}
+OR                          {printf("वा");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

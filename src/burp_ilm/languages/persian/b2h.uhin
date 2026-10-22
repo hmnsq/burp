@@ -1,0 +1,40 @@
+%{
+/* persian b2h.uhin: generated from the persian lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("بازگشت");}
+SHARED                      {printf("مشترك");}
+STATIC                      {printf("ایستا");}
+STRING                      {printf("رشته");}
+return                      {printf("بازگشت");}
+CONST                       {printf("ثابت");}
+TIMER                       {printf("مؤقت");}
+WHILE                       {printf("وقتی");}
+while                       {printf("وقتی");}
+CALL                        {printf("فراخوان");}
+ELSE                        {printf("وگرنه");}
+GOTO                        {printf("برو");}
+goto                        {printf("برو");}
+AND                         {printf("و");}
+END                         {printf("پایان");}
+FOR                         {printf("برای");}
+INT                         {printf("صحیح");}
+LET                         {printf("بگذار");}
+NOT                         {printf("نه");}
+and                         {printf("و");}
+end                         {printf("پایان");}
+for                         {printf("برای");}
+let                         {printf("بگذار");}
+not                         {printf("نه");}
+AS                          {printf("بهعنوان");}
+DO                          {printf("انجامبده");}
+IF                          {printf("اگر");}
+OR                          {printf("یا");}
+if                          {printf("اگر");}
+or                          {printf("یا");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

@@ -1,0 +1,19 @@
+%{
+/* chinese cpp2h.uhin: generated from the chinese lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+return                      {printf("返回");}
+\#else                      {printf("#否则");}
+while                       {printf("当");}
+else                        {printf("否则");}
+main                        {printf("主要");}
+\#if                        {printf("#如果");}
+for                         {printf("为");}
+int                         {printf("整数");}
+if                          {printf("如果");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

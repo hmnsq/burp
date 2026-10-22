@@ -1,0 +1,30 @@
+%{
+/* sundanese h2l.uhin: generated from the sundanese lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+puur_naa_nka                {printf("int");}
+sa_nracanaa                 {printf("struct");}
+anta_hstha                  {printf("inline");}
+parimaa_na                  {printf("sizeof");}
+dviguu_na                   {printf("double");}
+pa_njikaa                   {printf("register");}
+sa_nkeeta                   {printf("signal");}
+ca_ncala                    {printf("volatile");}
+ga_nanaa                    {printf("enum");}
+rak_sita                    {printf("protected");}
+bha_nga                     {printf("break");}
+sa_ngha                     {printf("union");}
+pak_sa                      {printf("case");}
+var_na                      {printf("char");}
+\#ᮚᮦᮔ᮪                      {printf("#if");}
+ᮞᮨᮓᮨᮜ                       {printf("while");}
+\#ᮜᮤᮚ                       {printf("#else");}
+ᮚᮦᮔ᮪                        {printf("if");}
+ᮜᮤᮚ                         {printf("else");}
+ᮝᮜᮤ                         {printf("return");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

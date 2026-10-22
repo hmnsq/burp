@@ -1,0 +1,75 @@
+%{
+/* marathi py2h.uhin: generated from the marathi lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+implements                  {printf("अंमलात");}
+interface                   {printf("अंतरफलक");}
+protected                   {printf("संरक्षित");}
+abstract                    {printf("अमूर्त");}
+continue                    {printf("सुरूठेवा");}
+volatile                    {printf("अस्थिर");}
+default                     {printf("पूर्वनिर्धारित");}
+extends                     {printf("विस्तारित");}
+finally                     {printf("अखेरीस");}
+package                     {printf("पॅकेज");}
+private                     {printf("खाजगी");}
+Object                      {printf("वस्तू");}
+String                      {printf("अक्षरमाला");}
+Thread                      {printf("धागा");}
+assert                      {printf("प्रतिज्ञा");}
+double                      {printf("द्विगुण");}
+except                      {printf("अपवाद");}
+global                      {printf("वैश्विक");}
+import                      {printf("आयात");}
+lambda                      {printf("निनावी");}
+public                      {printf("सार्वजनिक");}
+return                      {printf("परत");}
+static                      {printf("स्थिर");}
+switch                      {printf("निवड");}
+False                       {printf("असत्य");}
+break                       {printf("थांबा");}
+catch                       {printf("पकडा");}
+class                       {printf("वर्ग");}
+close                       {printf("बंद");}
+const                       {printf("स्थिरांक");}
+float                       {printf("दशांश");}
+raise                       {printf("उठवा");}
+short                       {printf("लघु");}
+sleep                       {printf("सुषुप्ति");}
+super                       {printf("परम");}
+throw                       {printf("फेका");}
+while                       {printf("पर्यंत");}
+write                       {printf("लिख");}
+yield                       {printf("द्या");}
+True                        {printf("सत्य");}
+case                        {printf("स्थिती");}
+char                        {printf("अक्षर");}
+elif                        {printf("किंवाजर");}
+else                        {printf("अन्यथा");}
+from                        {printf("तः");}
+goto                        {printf("जा");}
+long                        {printf("दीर्घ");}
+main                        {printf("मुख्य");}
+rand                        {printf("अक्रम");}
+read                        {printf("पठ");}
+sqrt                        {printf("वर्ग_मूल");}
+this                        {printf("हे");}
+void                        {printf("शून्य");}
+wait                        {printf("रुको");}
+and                         {printf("आणि");}
+for                         {printf("साठी");}
+int                         {printf("पूर्णांक");}
+new                         {printf("नवीन");}
+not                         {printf("नाही");}
+try                         {printf("प्रयत्न");}
+as                          {printf("इव");}
+do                          {printf("करा");}
+if                          {printf("जर");}
+in                          {printf("मध्ये");}
+or                          {printf("किंवा");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

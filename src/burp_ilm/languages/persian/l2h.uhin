@@ -1,0 +1,54 @@
+%{
+/* persian l2h.uhin: generated from the persian lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+protected                   {printf("محافظتشده");}
+\#include                   {printf("#شامل");}
+continue                    {printf("ادامه");}
+register                    {printf("ثبات");}
+volatile                    {printf("فرار");}
+default                     {printf("پیشفرض");}
+private                     {printf("خصوصی");}
+typedef                     {printf("تعریفنوع");}
+virtual                     {printf("مجازی");}
+assert                      {printf("أكد");}
+double                      {printf("دوگانه");}
+extern                      {printf("بیرونی");}
+inline                      {printf("درونخطی");}
+public                      {printf("عمومی");}
+return                      {printf("بازگشت");}
+signal                      {printf("سیگنال");}
+sizeof                      {printf("اندازه");}
+static                      {printf("ایستا");}
+struct                      {printf("ساختار");}
+switch                      {printf("انتخاب");}
+\#elif                      {printf("#وگرنهاگر");}
+\#else                      {printf("#وگرنه");}
+break                       {printf("بشکن");}
+const                       {printf("ثابت");}
+float                       {printf("اعشاری");}
+raise                       {printf("بالاببر");}
+union                       {printf("اجتماع");}
+while                       {printf("وقتی");}
+write                       {printf("اكتب");}
+NULL                        {printf("پوچ");}
+case                        {printf("حالت");}
+char                        {printf("نویسه");}
+else                        {printf("وگرنه");}
+enum                        {printf("شمارش");}
+free                        {printf("آزاد");}
+goto                        {printf("برو");}
+main                        {printf("اصلی");}
+read                        {printf("اقرأ");}
+void                        {printf("تهی");}
+\#if                        {printf("#اگر");}
+for                         {printf("برای");}
+int                         {printf("صحیح");}
+do                          {printf("انجامبده");}
+if                          {printf("اگر");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

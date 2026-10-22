@@ -1,0 +1,54 @@
+%{
+/* tamil h2l.uhin: generated from the tamil lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+பாதுகாக்கப்பட்ட             {printf("protected");}
+\#இல்லையெனில்               {printf("#else");}
+\#அல்லதெனில்                {printf("#elif");}
+இல்லையெனில்                 {printf("else");}
+\#அந்தர்பாவ                 {printf("#include");}
+கட்டமைப்பு                  {printf("struct");}
+எண்ணிக்கை                   {printf("enum");}
+ஒன்றிப்பு                   {printf("union");}
+தனிப்பட்ட                   {printf("private");}
+ப்ரதிஜ்ஞா                   {printf("assert");}
+மெய்நிகர்                   {printf("virtual");}
+திரும்பு                    {printf("return");}
+நிறுத்து                    {printf("break");}
+நிலையற்ற                    {printf("volatile");}
+எழுத்து                     {printf("char");}
+எழுப்பு                     {printf("raise");}
+சமிக்ஞை                     {printf("signal");}
+நிலையான                     {printf("static");}
+முதன்மை                     {printf("main");}
+\#எனில்                     {printf("#if");}
+இயல்பு                      {printf("default");}
+இரட்டை                      {printf("double");}
+உள்வரி                      {printf("inline");}
+தேர்வு                      {printf("switch");}
+மாறிலி                      {printf("const");}
+வகைவரை                      {printf("typedef");}
+விடுவி                      {printf("free");}
+வெறுமை                      {printf("void");}
+வெற்று                      {printf("NULL");}
+எனில்                       {printf("if");}
+தொடர்                       {printf("continue");}
+பதிவு                       {printf("register");}
+அளவு                        {printf("sizeof");}
+க்கு                        {printf("for");}
+செய்                        {printf("do");}
+செல்                        {printf("goto");}
+நிலை                        {printf("case");}
+பொது                        {printf("public");}
+போது                        {printf("while");}
+முழு                        {printf("int");}
+வெளி                        {printf("extern");}
+தசம                         {printf("float");}
+லிக                         {printf("write");}
+பட                          {printf("read");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

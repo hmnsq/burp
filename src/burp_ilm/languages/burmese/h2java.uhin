@@ -1,0 +1,37 @@
+%{
+/* burmese h2java.uhin: generated from the burmese lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+ni_spaadita                 {printf("implements");}
+sa_nracanaa                 {printf("struct");}
+anta_hstha                  {printf("inline");}
+parimaa_na                  {printf("sizeof");}
+ကိန်းပြည့်                  {printf("int");}
+\#မဟုတ်ပါက                  {printf("#else");}
+dviguu_na                   {printf("double");}
+gr_haa_na                   {printf("catch");}
+pa_njikaa                   {printf("register");}
+sa_nkeeta                   {printf("signal");}
+antata_h                    {printf("finally");}
+ca_ncala                    {printf("volatile");}
+ga_nanaa                    {printf("enum");}
+rak_sita                    {printf("protected");}
+su_supti                    {printf("sleep");}
+vistr_ta                    {printf("extends");}
+မဟုတ်ပါက                    {printf("else");}
+bha_nga                     {printf("break");}
+sa_ngha                     {printf("union");}
+ပြန်ပေး                     {printf("return");}
+\#အကယ်၍                     {printf("#if");}
+k_sipa                      {printf("throw");}
+pak_sa                      {printf("case");}
+var_na                      {printf("char");}
+နေစဉ်                       {printf("while");}
+အကယ်၍                       {printf("if");}
+အတွက်                       {printf("for");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

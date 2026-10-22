@@ -1,0 +1,30 @@
+%{
+/* kannada h2asm.uhin: generated from the kannada lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+ಇಲ್ಲದಿದ್ದರೆ                 {printf("ELSE");}
+ಅಧ್ಯವಸ್ಯತಿ                  {printf("ASSUME");}
+ಅನ್ತರ್ಭಾವ                   {printf("INCLUDE");}
+ಸಾರ್ವಜನಿಕ                   {printf("PUBLIC");}
+ಪೂರ್ಣಾಂಕ                    {printf("INT");}
+ವೈಶ್ವಿಕ                     {printf("global");}
+ಪ್ರಕಾರ                      {printf("TYPE");}
+ಅಂತ್ಯ                       {printf("END");}
+ಬಾಹ್ಯ                       {printf("EXTERN");}
+ಮತ್ತು                       {printf("AND");}
+ವಿಧಾನ                       {printf("PROC");}
+ಅಥವಾ                        {printf("OR");}
+ಅಲ್ಲ                        {printf("NOT");}
+ಆದರೆ                        {printf("IF");}
+ಒಳಗೆ                        {printf("IN");}
+ಸೂಚಕ                        {printf("PTR");}
+ಇದು                         {printf("THIS");}
+ಕರೆ                         {printf("CALL");}
+ಬೀಗ                         {printf("LOCK");}
+ಆಗ                          {printf("WHILE");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

@@ -1,0 +1,40 @@
+%{
+/* tamil b2h.uhin: generated from the tamil lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("திரும்பு");}
+SHARED                      {printf("ஸஹபாஜித");}
+STATIC                      {printf("நிலையான");}
+STRING                      {printf("சரம்");}
+return                      {printf("திரும்பு");}
+CONST                       {printf("மாறிலி");}
+TIMER                       {printf("காலயந்த்ர");}
+WHILE                       {printf("போது");}
+while                       {printf("போது");}
+CALL                        {printf("அழை");}
+ELSE                        {printf("இல்லையெனில்");}
+GOTO                        {printf("செல்");}
+goto                        {printf("செல்");}
+AND                         {printf("மற்றும்");}
+END                         {printf("முடி");}
+FOR                         {printf("க்கு");}
+INT                         {printf("முழு");}
+LET                         {printf("கொள்");}
+NOT                         {printf("இல்லை");}
+and                         {printf("மற்றும்");}
+end                         {printf("முடி");}
+for                         {printf("க்கு");}
+let                         {printf("கொள்");}
+not                         {printf("இல்லை");}
+AS                          {printf("இவ");}
+DO                          {printf("செய்");}
+IF                          {printf("எனில்");}
+OR                          {printf("அல்லது");}
+if                          {printf("எனில்");}
+or                          {printf("அல்லது");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

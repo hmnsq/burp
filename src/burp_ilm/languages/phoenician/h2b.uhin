@@ -1,0 +1,30 @@
+%{
+/* phoenician h2b.uhin: generated from the phoenician lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+طالما                       {printf("WHILE");}
+مشترك                       {printf("SHARED");}
+أرجع                        {printf("RETURN");}
+اذهب                        {printf("GOTO");}
+ثابت                        {printf("CONST");}
+ساكن                        {printf("STATIC");}
+صحيح                        {printf("INT");}
+ليكن                        {printf("LET");}
+مؤقت                        {printf("TIMER");}
+نادي                        {printf("CALL");}
+وإلا                        {printf("ELSE");}
+لكل                         {printf("FOR");}
+𐤐𐤏𐤋                         {printf("DO");}
+كـ                          {printf("AS");}
+نص                          {printf("STRING");}
+𐤀𐤅                          {printf("OR");}
+𐤀𐤌                          {printf("IF");}
+𐤋𐤀                          {printf("NOT");}
+𐤒𐤑                          {printf("END");}
+𐤅                           {printf("AND");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

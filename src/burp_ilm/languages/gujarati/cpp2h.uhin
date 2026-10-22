@@ -1,0 +1,67 @@
+%{
+/* gujarati cpp2h.uhin: generated from the gujarati lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+namespace                   {printf("નામાકાશ");}
+protected                   {printf("સુરક્ષિત");}
+\#include                   {printf("#અન્તર્ભાવ");}
+continue                    {printf("ચાલુ");}
+register                    {printf("નોંધણી");}
+volatile                    {printf("અસ્થિર");}
+default                     {printf("મૂળભૂત");}
+private                     {printf("ખાનગી");}
+typedef                     {printf("પ્રકારવ્યાખ્યા");}
+virtual                     {printf("આભાસી");}
+assert                      {printf("પ્રતિજ્ઞા");}
+double                      {printf("દ્વિગુણ");}
+extern                      {printf("બાહ્ય");}
+inline                      {printf("અંતઃરેખ");}
+public                      {printf("જાહેર");}
+return                      {printf("પાછા");}
+signal                      {printf("સંકેત");}
+sizeof                      {printf("કદ");}
+static                      {printf("સ્થિર");}
+struct                      {printf("સંરચના");}
+switch                      {printf("પસંદગી");}
+\#elif                      {printf("#અથવાજો");}
+\#else                      {printf("#નહીંતર");}
+break                       {printf("તોડો");}
+catch                       {printf("પકડો");}
+class                       {printf("વર્ગ");}
+const                       {printf("અચલ");}
+false                       {printf("ખોટું");}
+float                       {printf("દશાંશ");}
+raise                       {printf("ઉઠાવો");}
+sleep                       {printf("સુષુપ્તિ");}
+throw                       {printf("ફેંકો");}
+union                       {printf("સંઘ");}
+while                       {printf("જ્યારે");}
+write                       {printf("લિખ");}
+NULL                        {printf("ખાલી");}
+bool                        {printf("તાર્કિક");}
+case                        {printf("સ્થિતિ");}
+char                        {printf("અક્ષર");}
+else                        {printf("નહીંતર");}
+enum                        {printf("ગણના");}
+free                        {printf("મુક્ત");}
+goto                        {printf("જાઓ");}
+main                        {printf("મુખ્ય");}
+pipe                        {printf("પ્રણાલ");}
+read                        {printf("પઠ");}
+sync                        {printf("સમકાલિક");}
+this                        {printf("આ");}
+true                        {printf("સાચું");}
+void                        {printf("શૂન્ય");}
+\#if                        {printf("#જો");}
+for                         {printf("માટે");}
+int                         {printf("પૂર્ણાંક");}
+new                         {printf("નવું");}
+try                         {printf("પ્રયાસ");}
+do                          {printf("કરો");}
+if                          {printf("જો");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

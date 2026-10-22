@@ -1,0 +1,69 @@
+%{
+/* assamese py2h.uhin: generated from the assamese lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+implements                  {printf("নিষ্পাদিত");}
+interface                   {printf("সন্ধি");}
+protected                   {printf("রক্ষিত");}
+abstract                    {printf("অমূর্ত");}
+continue                    {printf("অনুৱর্ত");}
+volatile                    {printf("চঞ্চল");}
+default                     {printf("স্ৱভাৱ");}
+extends                     {printf("ৱিস্তৃত");}
+finally                     {printf("অন্ততঃ");}
+package                     {printf("পুটক");}
+private                     {printf("গুপ্ত");}
+Object                      {printf("ৱস্তু");}
+String                      {printf("পদাৱলী");}
+Thread                      {printf("তন্তু");}
+assert                      {printf("প্রতিজ্ঞা");}
+double                      {printf("দ্ৱিগুণ");}
+except                      {printf("অপৱাদ");}
+global                      {printf("ৱৈশ্ৱিক");}
+import                      {printf("আনযন");}
+lambda                      {printf("অনামন্");}
+public                      {printf("সার্ৱজনিক");}
+return                      {printf("ঘূৰাই");}
+static                      {printf("স্থির");}
+switch                      {printf("ৱিকল্প");}
+False                       {printf("মিছা");}
+break                       {printf("ভঙ্গ");}
+catch                       {printf("গৃহাণ");}
+class                       {printf("শ্ৰেণী");}
+const                       {printf("ধ্রুৱ");}
+float                       {printf("ভিন্ন");}
+raise                       {printf("উত্থাপয");}
+sleep                       {printf("সুষুপ্তি");}
+super                       {printf("পর");}
+throw                       {printf("ক্ষিপ");}
+while                       {printf("যেতিয়ালৈ");}
+write                       {printf("লিখ");}
+yield                       {printf("দা");}
+True                        {printf("সঁচা");}
+case                        {printf("পক্ষ");}
+char                        {printf("ৱর্ণ");}
+elif                        {printf("নোচেদ্যদি");}
+else                        {printf("অন্যথা");}
+from                        {printf("তঃ");}
+goto                        {printf("গচ্ছ");}
+main                        {printf("মুখ্য");}
+read                        {printf("পঠ");}
+this                        {printf("এতত্");}
+void                        {printf("শূন্য");}
+and                         {printf("আৰু");}
+for                         {printf("বাবে");}
+int                         {printf("পূর্ণাঙ্ক");}
+new                         {printf("নূতন");}
+not                         {printf("নহয়");}
+try                         {printf("যত্ন");}
+as                          {printf("ইৱ");}
+do                          {printf("কৰা");}
+if                          {printf("যদি");}
+in                          {printf("অন্তঃ");}
+or                          {printf("বা");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

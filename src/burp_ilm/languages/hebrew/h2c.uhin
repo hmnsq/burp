@@ -1,0 +1,52 @@
+%{
+/* hebrew h2c.uhin: generated from the hebrew lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+\#وإلاإذا                   {printf("#elif");}
+تعريفنوع                    {printf("typedef");}
+افتراضي                     {printf("default");}
+متطاير                      {printf("volatile");}
+\#אחרת                      {printf("#else");}
+כלעוד                       {printf("while");}
+إشارة                       {printf("signal");}
+اتحاد                       {printf("union");}
+استمر                       {printf("continue");}
+تعداد                       {printf("enum");}
+خارجي                       {printf("extern");}
+مزدوج                       {printf("double");}
+\#ضمن                       {printf("#include");}
+אחרת                        {printf("else");}
+החזר                        {printf("return");}
+עבור                        {printf("for");}
+اذهب                        {printf("goto");}
+ارفع                        {printf("raise");}
+اقرأ                        {printf("read");}
+اكتب                        {printf("write");}
+اكسر                        {printf("break");}
+بنية                        {printf("struct");}
+ثابت                        {printf("const");}
+حالة                        {printf("case");}
+ساكن                        {printf("static");}
+صحيح                        {printf("int");}
+عائم                        {printf("float");}
+فراغ                        {printf("void");}
+محمي                        {printf("protected");}
+مضمن                        {printf("inline");}
+\#אם                        {printf("#if");}
+עשה                         {printf("do");}
+أكد                         {printf("assert");}
+بدل                         {printf("switch");}
+حجم                         {printf("sizeof");}
+حرر                         {printf("free");}
+حرف                         {printf("char");}
+خاص                         {printf("private");}
+سجل                         {printf("register");}
+عام                         {printf("public");}
+عدم                         {printf("NULL");}
+אם                          {printf("if");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

@@ -1,0 +1,30 @@
+%{
+/* odia h2b.uhin: generated from the odia lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+ପୂର୍ଣ୍ଣସଂଖ୍ୟା               {printf("INT");}
+କାଲଯନ୍ତ୍ର                   {printf("TIMER");}
+ଯେତେବେଳେ                    {printf("WHILE");}
+ଫେରନ୍ତୁ                     {printf("RETURN");}
+ସହଭାଜିତ                     {printf("SHARED");}
+ଅନ୍ୟଥା                      {printf("ELSE");}
+କିମ୍ବା                      {printf("OR");}
+ନୁହେଁ                       {printf("NOT");}
+ବାକ୍ୟ                       {printf("STRING");}
+ସ୍ଥିର                       {printf("STATIC");}
+ପାଇଁ                        {printf("FOR");}
+ଅଚଳ                         {printf("CONST");}
+ଏବଂ                         {printf("AND");}
+ଡାକ                         {printf("CALL");}
+ଯଦି                         {printf("IF");}
+ଯାଅ                         {printf("GOTO");}
+ଶେଷ                         {printf("END");}
+ଇଵ                          {printf("AS");}
+କର                          {printf("DO");}
+ଧର                          {printf("LET");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

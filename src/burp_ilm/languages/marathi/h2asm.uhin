@@ -1,0 +1,31 @@
+%{
+/* marathi h2asm.uhin: generated from the marathi lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+अध्यवस्यति                  {printf("ASSUME");}
+अन्तर्भाव                   {printf("INCLUDE");}
+प्रक्रिया                   {printf("PROC");}
+सार्वजनिक                   {printf("PUBLIC");}
+निर्देशक                    {printf("PTR");}
+पूर्णांक                    {printf("INT");}
+वैश्विक                     {printf("global");}
+अन्यथा                      {printf("ELSE");}
+पर्यंत                      {printf("WHILE");}
+प्रकार                      {printf("TYPE");}
+किंवा                       {printf("OR");}
+कुलूप                       {printf("LOCK");}
+बाह्य                       {printf("EXTERN");}
+बोलवा                       {printf("CALL");}
+मध्ये                       {printf("IN");}
+नाही                        {printf("NOT");}
+शेवट                        {printf("END");}
+आणि                         {printf("AND");}
+भाग                         {printf("div");}
+जर                          {printf("IF");}
+हे                          {printf("THIS");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

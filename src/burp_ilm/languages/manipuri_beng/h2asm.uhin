@@ -1,0 +1,30 @@
+%{
+/* manipuri_beng h2asm.uhin: generated from the manipuri_beng lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+অধ্যবস্যতি                  {printf("ASSUME");}
+অন্তর্ভাব                   {printf("INCLUDE");}
+পূর্ণাঙ্ক                   {printf("INT");}
+সার্বজনিক                   {printf("PUBLIC");}
+নির্দেশক                    {printf("PTR");}
+বৈশ্বিক                     {printf("global");}
+অন্যথা                      {printf("ELSE");}
+আহ্বান                      {printf("CALL");}
+প্রকার                      {printf("TYPE");}
+অন্তঃ                       {printf("IN");}
+বাহ্য                       {printf("EXTERN");}
+যাবত্                       {printf("WHILE");}
+অন্ত                        {printf("END");}
+এতত্                        {printf("THIS");}
+তালক                        {printf("LOCK");}
+বিধি                        {printf("PROC");}
+যদি                         {printf("IF");}
+বা                          {printf("OR");}
+চ                           {printf("AND");}
+ন                           {printf("NOT");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

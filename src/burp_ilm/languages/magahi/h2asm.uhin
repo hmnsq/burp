@@ -1,0 +1,30 @@
+%{
+/* magahi h2asm.uhin: generated from the magahi lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+अध्यवस्यति                  {printf("ASSUME");}
+अन्तर्भाव                   {printf("INCLUDE");}
+पूर्णाङ्क                   {printf("INT");}
+सार्वजनिक                   {printf("PUBLIC");}
+निर्देशक                    {printf("PTR");}
+वैश्विक                     {printf("global");}
+अन्यथा                      {printf("ELSE");}
+आह्वान                      {printf("CALL");}
+प्रकार                      {printf("TYPE");}
+अन्तः                       {printf("IN");}
+बाह्य                       {printf("EXTERN");}
+यावत्                       {printf("WHILE");}
+अन्त                        {printf("END");}
+एतत्                        {printf("THIS");}
+तालक                        {printf("LOCK");}
+विधि                        {printf("PROC");}
+यदि                         {printf("IF");}
+वा                          {printf("OR");}
+च                           {printf("AND");}
+न                           {printf("NOT");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

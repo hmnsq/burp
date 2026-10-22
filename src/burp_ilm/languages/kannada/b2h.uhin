@@ -1,0 +1,51 @@
+%{
+/* kannada b2h.uhin: generated from the kannada lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("ಹಿಂತಿರುಗಿ");}
+SHARED                      {printf("ಸಹಭಾಜಿತ");}
+STATIC                      {printf("ಸ್ಥಿರ");}
+STRING                      {printf("ಪದಪುಂಜ");}
+return                      {printf("ಹಿಂತಿರುಗಿ");}
+CONST                       {printf("ಸ್ಥಿರಾಂಕ");}
+TIMER                       {printf("ಕಾಲಯನ್ತ್ರ");}
+WHILE                       {printf("ಆಗ");}
+gosub                       {printf("ಉಪ_ಹೋಗು");}
+input                       {printf("ತೆಗೆದುಕೊ");}
+print                       {printf("ಮುದ್ರಿಸು");}
+while                       {printf("ಆಗ");}
+CALL                        {printf("ಕರೆ");}
+ELSE                        {printf("ಇಲ್ಲದಿದ್ದರೆ");}
+GOTO                        {printf("ಹೋಗು");}
+goto                        {printf("ಹೋಗು");}
+next                        {printf("ಮುಂದಿನ_ಸುತ್ತು");}
+step                        {printf("ಹೆಜ್ಜೆಯಲ್ಲಿ");}
+then                        {printf("ಹಾಗಾದರೆ");}
+wend                        {printf("ತನಕ_ಅಂತ್ಯ");}
+AND                         {printf("ಮತ್ತು");}
+END                         {printf("ಅಂತ್ಯ");}
+FOR                         {printf("ಗಾಗಿ");}
+INT                         {printf("ಪೂರ್ಣಾಂಕ");}
+LET                         {printf("ಇರಲಿ");}
+NOT                         {printf("ಅಲ್ಲ");}
+and                         {printf("ಮತ್ತು");}
+dim                         {printf("ಆಯಾಮ");}
+end                         {printf("ಅಂತ್ಯ");}
+for                         {printf("ಗಾಗಿ");}
+let                         {printf("ಇರಲಿ");}
+mod                         {printf("ಶೇಷ");}
+not                         {printf("ಅಲ್ಲ");}
+rem                         {printf("ಟಿಪ್ಪಣಿ");}
+AS                          {printf("ಇವ");}
+DO                          {printf("ಮಾಡು");}
+IF                          {printf("ಆದರೆ");}
+OR                          {printf("ಅಥವಾ");}
+if                          {printf("ಆದರೆ");}
+or                          {printf("ಅಥವಾ");}
+to                          {printf("ವರೆಗೆ");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

@@ -1,0 +1,54 @@
+%{
+/* gujarati h2l.uhin: generated from the gujarati lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+પ્રકારવ્યાખ્યા              {printf("typedef");}
+\#અન્તર્ભાવ                 {printf("#include");}
+પ્રતિજ્ઞા                   {printf("assert");}
+પૂર્ણાંક                    {printf("int");}
+સુરક્ષિત                    {printf("protected");}
+\#અથવાજો                    {printf("#elif");}
+\#નહીંતર                    {printf("#else");}
+અંતઃરેખ                     {printf("inline");}
+દ્વિગુણ                     {printf("double");}
+અસ્થિર                      {printf("volatile");}
+જ્યારે                      {printf("while");}
+નહીંતર                      {printf("else");}
+નોંધણી                      {printf("register");}
+પસંદગી                      {printf("switch");}
+મૂળભૂત                      {printf("default");}
+સંરચના                      {printf("struct");}
+સ્થિતિ                      {printf("case");}
+અક્ષર                       {printf("char");}
+આભાસી                       {printf("virtual");}
+ઉઠાવો                       {printf("raise");}
+ખાનગી                       {printf("private");}
+જાહેર                       {printf("public");}
+દશાંશ                       {printf("float");}
+બાહ્ય                       {printf("extern");}
+મુક્ત                       {printf("free");}
+મુખ્ય                       {printf("main");}
+શૂન્ય                       {printf("void");}
+સંકેત                       {printf("signal");}
+સ્થિર                       {printf("static");}
+ખાલી                        {printf("NULL");}
+ગણના                        {printf("enum");}
+ચાલુ                        {printf("continue");}
+તોડો                        {printf("break");}
+પાછા                        {printf("return");}
+માટે                        {printf("for");}
+\#જો                        {printf("#if");}
+અચલ                         {printf("const");}
+કરો                         {printf("do");}
+જાઓ                         {printf("goto");}
+લિખ                         {printf("write");}
+સંઘ                         {printf("union");}
+કદ                          {printf("sizeof");}
+જો                          {printf("if");}
+પઠ                          {printf("read");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

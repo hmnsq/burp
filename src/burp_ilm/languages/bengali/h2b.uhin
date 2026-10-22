@@ -1,0 +1,30 @@
+%{
+/* bengali h2b.uhin: generated from the bengali lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+পূর্ণসংখ্যা                 {printf("INT");}
+কালযন্ত্র                   {printf("TIMER");}
+সহভাজিত                     {printf("SHARED");}
+অন্যথা                      {printf("ELSE");}
+ধ্রুবক                      {printf("CONST");}
+বাক্য                       {printf("STRING");}
+স্থির                       {printf("STATIC");}
+অথবা                        {printf("OR");}
+জন্য                        {printf("FOR");}
+ডাকো                        {printf("CALL");}
+ফেরত                        {printf("RETURN");}
+এবং                         {printf("AND");}
+করো                         {printf("DO");}
+ধরি                         {printf("LET");}
+নয়                         {printf("NOT");}
+যখন                         {printf("WHILE");}
+যদি                         {printf("IF");}
+যাও                         {printf("GOTO");}
+শেষ                         {printf("END");}
+ইব                          {printf("AS");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

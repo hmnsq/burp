@@ -1,0 +1,69 @@
+%{
+/* bengali h2py.uhin: generated from the bengali lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+পূর্বনির্ধারিত              {printf("default");}
+পূর্ণসংখ্যা                 {printf("int");}
+বাস্তবায়িত                 {printf("implements");}
+সম্প্রসারিত                 {printf("extends");}
+নতুবা_যদি                   {printf("elif");}
+প্রতিজ্ঞা                   {printf("assert");}
+ব্যক্তিগত                   {printf("private");}
+ব্যতিক্রম                   {printf("except");}
+সংযোগস্থল                   {printf("interface");}
+নির্বাচন                    {printf("switch");}
+সর্বজনীন                    {printf("public");}
+সুরক্ষিত                    {printf("protected");}
+সুষুপ্তি                    {printf("sleep");}
+ক্ষেত্র                     {printf("case");}
+দ্বিগুণ                     {printf("double");}
+বিমূর্ত                     {printf("abstract");}
+বৈশ্বিক                     {printf("global");}
+অন্যথা                      {printf("else");}
+অবশেষে                      {printf("finally");}
+অস্থির                      {printf("volatile");}
+আমদানি                      {printf("import");}
+চেষ্টা                      {printf("try");}
+ধ্রুবক                      {printf("const");}
+প্রধান                      {printf("main");}
+মিথ্যা                      {printf("False");}
+শ্রেণী                      {printf("class");}
+অক্ষর                       {printf("char");}
+অনামা                       {printf("lambda");}
+ছোড়ো                       {printf("throw");}
+দশমিক                       {printf("float");}
+বস্তু                       {printf("Object");}
+বাক্য                       {printf("String");}
+বিরতি                       {printf("break");}
+মধ্যে                       {printf("in");}
+মোড়ক                       {printf("package");}
+শূন্য                       {printf("void");}
+স্থির                       {printf("static");}
+অথবা                        {printf("or");}
+চালু                        {printf("continue");}
+জন্য                        {printf("for");}
+তোলো                        {printf("raise");}
+নতুন                        {printf("new");}
+ফেরত                        {printf("return");}
+সত্য                        {printf("True");}
+সুতা                        {printf("Thread");}
+এবং                         {printf("and");}
+করো                         {printf("do");}
+দাও                         {printf("yield");}
+ধরো                         {printf("catch");}
+নয়                         {printf("not");}
+পরম                         {printf("super");}
+যখন                         {printf("while");}
+যদি                         {printf("if");}
+যাও                         {printf("goto");}
+লিখ                         {printf("write");}
+ইব                          {printf("as");}
+এই                          {printf("this");}
+তঃ                          {printf("from");}
+পঠ                          {printf("read");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

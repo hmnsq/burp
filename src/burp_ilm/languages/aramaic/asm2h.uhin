@@ -1,0 +1,30 @@
+%{
+/* aramaic asm2h.uhin: generated from the aramaic lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+INCLUDE                     {printf("ضمن");}
+ASSUME                      {printf("افترض");}
+EXTERN                      {printf("خارجي");}
+PUBLIC                      {printf("عام");}
+WHILE                       {printf("طالما");}
+CALL                        {printf("نادي");}
+ELSE                        {printf("وإلا");}
+LOCK                        {printf("قفل");}
+PROC                        {printf("إجراء");}
+THIS                        {printf("هذا");}
+TYPE                        {printf("نوع");}
+call                        {printf("نادي");}
+AND                         {printf("𐡅");}
+END                         {printf("𐡎𐡅𐡐");}
+INT                         {printf("صحيح");}
+NOT                         {printf("𐡋𐡀");}
+PTR                         {printf("مؤشر");}
+IF                          {printf("𐡄𐡍");}
+IN                          {printf("في");}
+OR                          {printf("𐡀𐡅");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

@@ -1,0 +1,43 @@
+%{
+/* sanskrit h2asm.uhin: generated from the sanskrit lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+प्रत्यागच्छ                 {printf("ret");}
+अध्यवस्यति                  {printf("ASSUME");}
+अन्तर्भाव                   {printf("INCLUDE");}
+पूर्णाङ्क                   {printf("INT");}
+सार्वजनिक                   {printf("PUBLIC");}
+निर्देशक                    {printf("PTR");}
+निक्षिप                     {printf("push");}
+वैश्विक                     {printf("global");}
+अन्यथा                      {printf("ELSE");}
+आह्वान                      {printf("CALL");}
+प्रकार                      {printf("TYPE");}
+वियोजय                      {printf("sub");}
+अन्तः                       {printf("IN");}
+उद्धर                       {printf("pop");}
+कूर्द                       {printf("jmp");}
+खण्डः                       {printf("section");}
+निम्न                       {printf("LOW");}
+बाह्य                       {printf("EXTERN");}
+यावत्                       {printf("WHILE");}
+अन्त                        {printf("END");}
+उच्च                        {printf("HIGH");}
+एतत्                        {printf("THIS");}
+गुणय                        {printf("mul");}
+चालय                        {printf("mov");}
+तालक                        {printf("LOCK");}
+तुलय                        {printf("cmp");}
+भाजय                        {printf("div");}
+योजय                        {printf("add");}
+विधि                        {printf("PROC");}
+यदि                         {printf("IF");}
+वा                          {printf("OR");}
+च                           {printf("AND");}
+न                           {printf("NOT");}
+([A-Za-z0-9_]|[\xC2-\xF4][\x80-\xBF]+)+   {printf("%s",yytext);}
+%%

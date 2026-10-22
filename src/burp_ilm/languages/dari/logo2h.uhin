@@ -1,0 +1,25 @@
+%{
+/* dari logo2h.uhin: generated from the dari lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+clearscreen                 {printf("پاک_صفحه");}
+forward                     {printf("أمامي");}
+pendown                     {printf("قلم_پایین");}
+ifelse                      {printf("اگر_وگرنه");}
+repeat                      {printf("تکرار");}
+penup                       {printf("قلم_بالا");}
+print                       {printf("چاپ");}
+right                       {printf("راست");}
+back                        {printf("عقب");}
+home                        {printf("خانه");}
+left                        {printf("چپ");}
+make                        {printf("بساز");}
+end                         {printf("انته");}
+if                          {printf("إذا");}
+to                          {printf("تا");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%

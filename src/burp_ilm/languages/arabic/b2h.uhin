@@ -1,0 +1,40 @@
+%{
+/* arabic b2h.uhin: generated from the arabic lexicon by lang/hindawi/tools/complete_cells.py,
+   in the form of the original Hindawi transducers. Constructs without a word are in STATUS.tsv. */
+%}
+%%
+\'(\\.|[^\\\'\n])*\'                       {printf("%s",yytext);}
+\"(\\.|[^\\\"\n])*\"                       {printf("%s",yytext);}
+
+RETURN                      {printf("إرجاع");}
+SHARED                      {printf("مشترك");}
+STATIC                      {printf("ساكن");}
+STRING                      {printf("نص");}
+return                      {printf("إرجاع");}
+CONST                       {printf("ثابت");}
+TIMER                       {printf("مؤقت");}
+WHILE                       {printf("بينما");}
+while                       {printf("بينما");}
+CALL                        {printf("نادي");}
+ELSE                        {printf("وإلا");}
+GOTO                        {printf("اذهب");}
+goto                        {printf("اذهب");}
+AND                         {printf("و");}
+END                         {printf("انته");}
+FOR                         {printf("لكل");}
+INT                         {printf("صحيح");}
+LET                         {printf("ليكن");}
+NOT                         {printf("ليس");}
+and                         {printf("و");}
+end                         {printf("انته");}
+for                         {printf("لكل");}
+let                         {printf("ليكن");}
+not                         {printf("ليس");}
+AS                          {printf("كـ");}
+DO                          {printf("افعل");}
+IF                          {printf("إذا");}
+OR                          {printf("أو");}
+if                          {printf("إذا");}
+or                          {printf("أو");}
+[A-Za-z_][A-Za-z0-9_]*      {printf("%s",yytext);}
+%%
