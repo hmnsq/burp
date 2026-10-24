@@ -2,7 +2,7 @@
 © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. Licensed under the MIT licence (see LICENSE and NOTICE)."""
 from pathlib import Path
 
-__version__ = "2026.10.0"
+__version__ = "2026.10.1"
 HOME = Path(__file__).parent
 BURP = HOME / "burp" / "burp.py"
 GLOSSARY = HOME / "burp" / "glossary"

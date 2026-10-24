@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use BURP, please cite it as below."
 title: "BURP: put source code into any of Hindawi's human languages and back, byte for byte"
-version: 2026.10.0
-date-released: 2026-10-22
+version: 2026.10.1
+date-released: 2026-10-24
 license: MIT
 authors:
   - family-names: Choudhary

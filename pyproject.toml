@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "burp-ilm"
-version = "2026.10.0"
+version = "2026.10.1"
 description = "BURP: put source code into any of Hindawi's human languages and back, byte for byte, and report what is still missing."
 readme = "README.md"
 license = "MIT"

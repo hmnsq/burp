@@ -168,6 +168,41 @@ def project(text, src, dst):
     return "".join(out)
 
 
+# The last fallback for a Devanagari language, after the glossary, Argos, a local LLM and a command: an English word spelt
+# in Devanagari, letter by letter, by fixed rules (ITRANS-like; every untranslated name and comment then reads in the
+# language's script). It is a spelling, not a translation: each one is recorded, reverses by the record like every other
+# name, and is listed in GAPS.md for a dictionary word to replace it.
+_SPELL_V = [("aa", "आ", "ा"), ("ai", "ऐ", "ै"), ("au", "औ", "ौ"), ("ee", "ई", "ी"), ("oo", "ऊ", "ू"), ("ou", "औ", "ौ"),
+            ("a", "अ", ""), ("e", "ए", "े"), ("i", "इ", "ि"), ("o", "ओ", "ो"), ("u", "उ", "ु")]
+_SPELL_C = [("kh", "ख"), ("gh", "घ"), ("ch", "च"), ("jh", "झ"), ("th", "थ"), ("dh", "ध"), ("ph", "फ"), ("bh", "भ"),
+            ("sh", "श"), ("b", "ब"), ("c", "क"), ("d", "ड"), ("f", "फ़"), ("g", "ग"), ("h", "ह"), ("j", "ज"), ("k", "क"),
+            ("l", "ल"), ("m", "म"), ("n", "न"), ("p", "प"), ("q", "क"), ("r", "र"), ("s", "स"), ("t", "ट"), ("v", "व"),
+            ("w", "व"), ("x", "क्स"), ("y", "य"), ("z", "ज़")]
+
+
+def spell_devanagari(word):
+    w, out, i, cons = word.lower(), [], 0, False
+    while i < len(w):
+        if w[i].isdigit():
+            out.append(chr(0x0966 + int(w[i]))); cons = False; i += 1; continue
+        v = next((x for x in _SPELL_V if w.startswith(x[0], i)), None)
+        if v:
+            out.append(v[2] if cons else v[1]); cons = False; i += len(v[0]); continue
+        c = next((x for x in _SPELL_C if w.startswith(x[0], i)), None)
+        if c:
+            if cons:
+                out.append("्")
+            out.append(c[1]); cons = True; i += len(c[0]); continue
+        i += 1
+    return "".join(out)
+
+
+def spell_text(text):
+    """Every English word and number of a comment line spelt in Devanagari; everything else kept as it is."""
+    text = re.sub(r"[A-Za-z][A-Za-z0-9]*", lambda m: spell_devanagari(m.group()), text)
+    return re.sub(r"[0-9]", lambda m: chr(0x0966 + int(m.group())), text)
+
+
 class Translator:
     def __init__(self, lang, order):
         self.lang, self.code, self.order, self.gloss = lang, ISO.get(lang, lang), order, {}
@@ -185,6 +220,15 @@ class Translator:
         if u.exists():
             rows += [tuple(l.rstrip("\n").split("\t")[:2]) for l in open(u, encoding="utf-8") if "\t" in l]
         self.gloss = {e.lower(): n for e, n in rows if e and n}
+        try:
+            self.script = script_of(" ".join(keyword_table(lang, ["c2h"]).values()))
+        except Exception:
+            self.script = None
+        self.devanagari = self.script == "DEVANAGARI"
+        # Argos has no model for some languages (Sanskrit among them): a Devanagari language then reads Argos's Hindi,
+        # or the language HINDAWI_ARGOS_PIVOT names; the record says which
+        self.pivot = os.environ.get("HINDAWI_ARGOS_PIVOT") or ("hi" if self.devanagari and self.code != "hi" else None)
+        self.spelt = set()
         self.argos = None
         if "argos" in order:
             try:
@@ -201,12 +245,13 @@ class Translator:
             if how == "glossary" and t.lower() in self.gloss:
                 return self.gloss[t.lower()]
             if how == "argos" and self.argos:
-                try:
-                    r = self.argos.translate(t, "en", self.code)
-                    if r and r != t:
-                        return r
-                except Exception:
-                    pass
+                for code in [self.code] + ([self.pivot] if self.pivot else []):
+                    try:
+                        r = self.argos.translate(t, "en", code)
+                        if r and r != t:
+                            return r
+                    except Exception:
+                        pass
             if how == "llm" and os.environ.get("HINDAWI_LLM_URL"):
                 r = self.llm(t)
                 if r and r != t:
@@ -238,6 +283,11 @@ class Translator:
         words = [w for w in re.sub(r"([a-z0-9])([A-Z])", r"\1_\2", ident).split("_") if w]
         whole = self.phrase(" ".join(words))
         parts = [whole] if whole else [self.phrase(w) or w for w in words]
+        if self.devanagari and not whole:  # what no translator gave is spelt in Devanagari, and recorded as spelt
+            for k, w in enumerate(parts):
+                if re.search(r"[A-Za-z]", w):
+                    parts[k] = spell_devanagari(w) if w == words[k] else re.sub(r"[A-Za-z][A-Za-z0-9]*", lambda m: spell_devanagari(m.group()), w)
+                    self.spelt.add(words[k])
         if not whole and parts == words:   # nothing translated: the name stays exactly as it was
             return ident
         native = re.sub(r"[^\w\u0300-\u036F\u0900-\u0DFF\u0E00-\u0FFF\u1000-\u109F\u1780-\u18AF\uA800-\uABFF]+", "_",
@@ -358,7 +408,10 @@ class Ingestion:
         inner = m.group(2)
         if LEGAL.search(inner):                  # copyright and licence notices are kept exactly as their authors wrote them
             return text
-        lines = [self.tr.phrase(l) or l if l.strip() else l for l in inner.split("\n")]
+        lines = [(self.tr.phrase(l) or (spell_text(l) if self.tr.devanagari else l)) if l.strip() else l
+                 for l in inner.split("\n")]
+        if self.tr.devanagari and any(l.strip() and not self.tr.phrase(l) for l in inner.split("\n")):
+            self.gaps.setdefault("spelt_comments", __import__("collections").Counter())[inner.strip()[:100]] += 1
         native = m.group(1) + "\n".join(lines) + (m.group(3) or "")
         if native == text and re.search(r"[A-Za-z]{3}", inner):
             self.gaps["comments"][inner.strip()[:100]] += 1      # no translation yet: stays as written
